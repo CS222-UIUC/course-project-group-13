@@ -1,14 +1,15 @@
-
-#Ongoing backend development of puzzles to solve
-password1 = "segfault"
-password2 = "runtime"
+PASSWORD1 = "vector"
+PASSWORD2 = "runtime"
 level = 1 #indicates the current number of the game's level
 points = 0 #the number of points the player has
 increase = 3 #how many more points can be gained when a question is answered correctly
-hasKeyOne = false #checks if a player has obtained a key or prize from the inventory
+keyone = 0 #checks if a player has obtained a key or prize from the inventory
 
-def clueOnePassword(input): #check if player solves clue one correctly
-    if input == password1:
+
+def clue_one_password(password): #check if player solves clue one correctly
+    global increase
+    global points
+    if password == PASSWORD1:
         print("Correct! You earned " + increase + " points.")
         points = points + increase
     else:
@@ -17,28 +18,28 @@ def clueOnePassword(input): #check if player solves clue one correctly
             print("Incorrect. You have " + increase + " tries remaining.")
         else:
             print("This puzzle is now unavailable")
-        
-        
- def clueTwoPassword(input): #check if player solves clue two correctly
-    if input == password2:
+
+def clue_two_password(password): #check if player solves clue two correctly
+    global increase
+    global points
+    if password == PASSWORD2:
         print("Correct! You earned " + increase + " points.")
         points = points + increase
     else:
         increase = increase - 1
-        if (increase > 0):
+        if increase > 0:
             print("Incorrect. You have " + increase + " tries remaining.")
         else:
             print("This puzzle is now unavailable")
-        
-  def getKeyOneForInventory(): #player adds a new key to the inventory that allows for more features or a higher level
+
+def get_key_one_for_inventory(): #player adds a new key to the inventory
+    global points
+    global level
     required = 3
     if points < required:
         print("Not enough points available. Continue solving puzzles")
     else:
-        print("Description: this key unlocks the next level.") 
-        ++level
+        print("Description: this key unlocks the next level.")
+        level = level + 1
+        haskeyone = 1
         points = points - required
-        
-        
-
-
