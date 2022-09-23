@@ -17,9 +17,9 @@ jobs:
           pip install flake8 pytest
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Test with pytest
-        run: |
-          pytest backend_rs.py
+      - run: |
+          pytest
       - name: List files in the repository
-        run: |
+      - run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
