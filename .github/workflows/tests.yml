@@ -1,5 +1,4 @@
 name: Run tests
-#a
 
 on:
   push:
