@@ -1,3 +1,4 @@
+from backend_rs import *
 from backend_rs import clue_one_password
 from backend_rs import clue_two_password
 from backend_rs import points
