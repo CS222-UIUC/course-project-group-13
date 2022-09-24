@@ -14,8 +14,6 @@ requirements = [
 setup(
     name="downloader_cli",
     version="0.3.3",
-    long_description=long_description,
-    long_description_content_type="text/markdown",
     url="https://github.com/CS222-UIUC/course-project-group-13",
     packages=["downloader_cli"],
     classifiers=(
