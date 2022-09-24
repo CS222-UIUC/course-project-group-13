@@ -4,14 +4,11 @@
 import io
 from setuptools import setup
 
-with io.open("README.md", encoding='utf-8') as fh:
-    long_description = fh.read()
 
 requirements = [
     'urllib3>=1.25.6'
 ]
 
-#exec(open("downloader_cli/__version__.py").read())
 
 
 setup(
