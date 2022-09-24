@@ -11,18 +11,15 @@ requirements = [
     'urllib3>=1.25.6'
 ]
 
-exec(open("downloader_cli/__version__.py").read())
+#exec(open("downloader_cli/__version__.py").read())
 
 
 setup(
     name="downloader_cli",
     version=__version__,
-    author="Deepjyoti Barman",
-    author_email="deep.barman30@gmail.com",
-    description="A simple downloader written in Python with an awesome progressbar.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/deepjyoti30/downloader-cli",
+    url="https://github.com/CS222-UIUC/course-project-group-13",
     packages=["downloader_cli"],
     classifiers=(
         [
