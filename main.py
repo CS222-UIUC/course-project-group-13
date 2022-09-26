@@ -1,6 +1,12 @@
-from backend_rs import *
+"""contains test cases that return either true (passed) or false (failed)"""
+from backend_rs import clue_one_password
+from backend_rs import clue_two_password
+from backend_rs import get_key_one_for_inventory
+from backend_rs import print_increase
+from backend_rs import print_keyone
+from backend_rs import print_level
+from backend_rs import print_points
 
-#test_cases_function("string")
 print("Testing if points increase if correct answer is given")
 clue_one_password("vector")
 print(print_points() == 3)
