@@ -1,5 +1,3 @@
-from backend_rs import *
-
 name: Run tests
 #a
 on:
