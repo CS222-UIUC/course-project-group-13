@@ -1,0 +1,13 @@
+<h1>Create Account Below</h1>
+
+{% for message in messages %}
+<h5>{{message}}</h5>
+{% endfor %}
+
+<form method="POST" action="register">
+    <p>Username:</p>
+    <input type="text" name="username" />
+    <p>Password:</p>
+    <input type="text" name="password" />
+    <input type="submit" />
+</form>
