@@ -6,6 +6,14 @@ from backend_rs import print_increase
 from backend_rs import print_keyone
 from backend_rs import print_level
 from backend_rs import print_points
+from backend_rs import set_increase
+from backend_rs import set_keyone
+from backend_rs import set_level
+from backend_rs import set_points
+
+from puzzles import riddle
+from puzzles import decode
+
 num_failed = 0
 num_passed = 0
 
@@ -19,7 +27,7 @@ else:
 
 print("")
 print("Testing if points increase if correct answer is given")
-clue_two_password("runtime")
+clue_two_password("This project deserves an A!")
 print(print_points() == 6)
 if print_points() == 6:
     num_passed = num_passed + 1
@@ -28,7 +36,7 @@ else:
 
 print("")
 print("Testing if attempts decrease if wrong answer is given")
-clue_one_password("runtime")
+clue_one_password("This project deserves an A!")
 print(print_increase() == 2)
 if print_increase() == 2:
     num_passed = num_passed + 1
@@ -37,7 +45,7 @@ else:
 
 print("")
 print("Testing if attempts decrease if wrong answer is given")
-clue_two_password("vector")
+clue_two_password("I don't know")
 print(print_increase() == 1)
 if print_increase() == 1:
     num_passed = num_passed + 1
@@ -70,6 +78,17 @@ if print_keyone() == 1:
     num_passed = num_passed + 1
 else:
     num_failed = num_failed + 1
+
+#tested behavior in terminal because requires user input -- unsure if there's a way to test it more intuitively
+print()
+set_increase(3)
+print("Testing if puzzle 1 behaves correctly...")
+riddle()
+
+print()
+set_increase(3)
+print("Testing if puzzle 2 behaves correctly...")
+decode()
 
 print("")
 if num_failed == 0:
