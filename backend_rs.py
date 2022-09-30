@@ -1,7 +1,7 @@
 """includes a few functions to determine whether players solved puzzles correctly"""
 PASSWORD1 = "vector"
 PASSWORD2 = "runtime"
-
+#
 level = 1 #indicates the current number of the game's level
 points = 0 #the number of points the player has
 increase = 3 #how many more points can be gained when a question is answered correctly
