@@ -1,2 +1,11 @@
 Main Home Page:
 
+Stage 1: 
+•	Contains these puzzles: clue_one_password (a riddle about vectors), clue_two_password (decoding a message)
+•	Contains hidden objects: links to translation (for decode puzzle), bonus attempts at questions for this stage, two pictures for use in stage 2
+•	Uses the following features: inventory (allows player to check whether a reward can be used to continue the game), points/attempts display, theming/style (using CSS)
+
+Stage 2: 
+•	Contains these puzzles: clue_three_password (identifying what the pictures found in the previous stage represent), directional_lock (player inputs the order of the directions used to solve a maze), clue_four_password (a 3-letter code representing the acronym of the maze’s traversal)
+•	Contains hidden objects: maze (which player uses to solve directional lock), hint (that maze will be used in two different puzzles), 
+•	Uses the following features: virtual UV light, points/attempts display, inventory, theming/style (CSS)
