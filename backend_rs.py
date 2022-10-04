@@ -11,6 +11,36 @@ level = 1 #indicates the current number of the game's level
 points = 0 #the number of points the player has
 increase = 3 #how many more points can be gained when a question is answered correctly
 keyone = 0 #checks if a player has obtained a key or prize from the inventory
+keytwo = 0
+keythree = 0
+completed = 0
+
+def level_changer():
+    """allows player to continue to the next stage based on items in inventory"""
+    global level
+    global keyone
+    global keytwo
+    global keythree
+    global completed
+    if level == 1:
+        if keyone == 1:
+            level = 2
+            return 2
+        else:
+            return 1
+    elif level == 2:
+        if keytwo == 1:
+            level = 3
+            return 3
+        else:
+            return 2
+    elif level == 3:
+        if keythree == 1:
+            completed = 1
+            print("Congratulations! You finished the escape room")
+            return 4
+        else:
+            return 3
 
 def clue_one_password(password):
     """check if player solves clue one correctly"""
