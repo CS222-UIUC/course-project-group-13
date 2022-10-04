@@ -4,6 +4,8 @@ from ast import Num
 
 PASSWORD1 = "vector"
 PASSWORD2 = "This project deserves an A!"
+PASSWORD3 = "binary"
+YEAR = 1996
 
 level = 1 #indicates the current number of the game's level
 points = 0 #the number of points the player has
@@ -43,6 +45,45 @@ def clue_two_password(password):
         else:
             print("This puzzle is now unavailable")
             return -1
+
+def clue_three_password(password):
+    """check if player identifies image from stage 1 correctly"""
+    global increase
+    global points
+    if password == PASSWORD3:
+        points = points + increase
+        print("Correct! You earned " + str(increase) + " points for a total of " + str(points))
+        return 1
+    else:
+        increase = increase - 1
+        if increase > 0:
+            print("Incorrect. You have " + str(increase) + " tries remaining.")
+            return 0
+        else:
+            print("This puzzle is now unavailable")
+            return -1
+
+def year_puzzle_one(integer_input):
+    """check if player sorts number clues correctly"""
+    global points
+    global level
+    if integer_input % 10000 >= 1:
+        print("Your input is too large")
+    elif integer_input % 1000 == 0:
+        print("Your input is too small")
+    else:
+        if integer_input == YEAR:
+            points = points + increase
+            print("Correct! You earned " + str(increase) + " points for a total of " + str(points))
+            return 1
+        else: 
+            increase = increase - 1
+            if increase > 0:
+                print("Incorrect. You have " + str(increase) + " tries remaining.")
+                return 0
+            else:
+                print("This puzzle is now unavailable")
+                return -1
 
 def get_key_one_for_inventory():
     """player adds a new key to the inventory"""
@@ -91,27 +132,3 @@ def set_keyone(n):
     global keyone
     keyone = n
 
-# def test_cases_function(helper):
-#     print("Ignore the first test")
-#     print(helper == "")
-#     print("Testing if points increase if correct answer is given")
-#     clue_one_password("vector")
-#     print(points == 3)
-#     print("Testing if points increase if correct answer is given")
-#     clue_two_password("runtime")
-#     print(points == 6)
-#     print("Testing if attempts decrease if wrong answer is given")
-#     clue_one_password("runtime")
-#     print(increase == 2)
-#     print("Testing if attempts decrease if wrong answer is given")
-#     clue_two_password("vector")
-#     print(increase == 1)
-#     print("Testing if level increases when points reach threshold")
-#     oldlevel = level
-#     oldpoints = points
-#     get_key_one_for_inventory()
-#     print(level > oldlevel)
-#     print("Testing if points decrease when prize is obtained")
-#     print(points < oldpoints)
-#     print("Testing if prize is obtained in variable")
-#     print(keyone == 1)
