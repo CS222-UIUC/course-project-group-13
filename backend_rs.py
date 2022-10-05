@@ -21,26 +21,17 @@ def level_changer():
     global keyone
     global keytwo
     global keythree
+    global points
     global completed
-    if level == 1:
-        if keyone == 1:
-            level = 2
-            return 2
-        else:
-            return 1
-    elif level == 2:
-        if keytwo == 1:
-            level = 3
-            return 3
-        else:
-            return 2
-    elif level == 3:
+    global increase
+    level = level + 1
+    points = 0
+    increase = 3
+    if level == 3:
         if keythree == 1:
-            completed = 1
             print("Congratulations! You finished the escape room")
-            return 4
-        else:
-            return 3
+    return level
+
 
 def clue_one_password(password):
     """check if player solves clue one correctly"""
@@ -97,10 +88,11 @@ def year_puzzle_one(integer_input):
     """check if player sorts number clues correctly"""
     global points
     global level
-    if integer_input % 10000 >= 1:
-        print("Your input is too large")
-    elif integer_input % 1000 == 0:
+    global increase
+    if integer_input / 1000 == 0:
         print("Your input is too small")
+    elif integer_input / 1000 >= 2:
+        print("Your input is too large")
     else:
         if integer_input == YEAR:
             points = points + increase
@@ -125,9 +117,9 @@ def get_key_one_for_inventory():
         print("You need "+str(required-points)+" more points. Continue solving puzzles")
     else:
         print("Description: this key unlocks the next level.")
-        level = level + 1
         keyone = 1
         points = points - required
+        level_changer()
 
 def print_points() -> int:
     """getter for points"""
@@ -161,4 +153,3 @@ def set_level(n):
 def set_keyone(n):
     global keyone
     keyone = n
-
