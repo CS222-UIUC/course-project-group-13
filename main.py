@@ -16,6 +16,8 @@ from backend_rs import set_points
 
 from puzzles import riddle
 from puzzles import decode
+from puzzles import riddle_automatic
+from puzzles import decode
 
 num_failed = 0
 num_passed = 0
