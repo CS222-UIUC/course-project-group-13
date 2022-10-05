@@ -67,7 +67,7 @@ def decode_automatic():
         if correct == 1:
             return
         elif correct == 0:
-            again = "N"
+            again = input("Would you like to try again? Y/N ")
             if again == "N":
                 return
         else:
