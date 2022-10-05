@@ -151,12 +151,15 @@ print("")
 print()
 set_increase(3)
 print("Testing if puzzle 1 behaves correctly...")
-riddle()
+print(print_keyone() == 1)
+# riddle()
+riddle_automatic()
 
 print()
 set_increase(3)
 print("Testing if puzzle 2 behaves correctly...")
-decode()
+# decode()
+decode_automatic()
 
 print("")
 if num_failed == 0:
