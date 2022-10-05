@@ -7,10 +7,10 @@ PASSWORD2 = "This project deserves an A!"
 PASSWORD3 = "binary"
 YEAR = 1996
 
-level = 1 #indicates the current number of the game's level
-points = 0 #the number of points the player has
-increase = 3 #how many more points can be gained when a question is answered correctly
-keyone = 0 #checks if a player has obtained a key or prize from the inventory
+level = 1  # indicates the current number of the game's level
+points = 0  # the number of points the player has
+increase = 3  # how many more points can be gained when a question is answered correctly
+keyone = 0  # checks if a player has obtained a key or prize from the inventory
 keytwo = 0
 keythree = 0
 completed = 0
@@ -50,6 +50,7 @@ def clue_one_password(password):
             print("This puzzle is now unavailable")
             return -1 #to indicate that the puzzle is unavailable
 
+
 def clue_two_password(password):
     """check if player solves clue two correctly"""
     global increase
@@ -67,6 +68,7 @@ def clue_two_password(password):
             print("This puzzle is now unavailable")
             return -1
 
+
 def clue_three_password(password):
     """check if player identifies image from stage 1 correctly"""
     global increase
@@ -83,6 +85,7 @@ def clue_three_password(password):
         else:
             print("This puzzle is now unavailable")
             return -1
+
 
 def year_puzzle_one(integer_input):
     """check if player sorts number clues correctly"""
@@ -107,6 +110,7 @@ def year_puzzle_one(integer_input):
                 print("This puzzle is now unavailable")
                 return -1
 
+
 def get_key_one_for_inventory():
     """player adds a new key to the inventory"""
     global points
@@ -121,35 +125,43 @@ def get_key_one_for_inventory():
         points = points - required
         level_changer()
 
+        
 def print_points() -> int:
     """getter for points"""
     return points
+
 
 def print_increase() -> int:
     """getter for increase"""
     return increase
 
+
 def print_level() -> int:
     """getter for level"""
     return level
 
+
 def print_keyone() -> int:
     """getter for status of having prize"""
     return keyone
+
 
 """setters for global variables (mostly for testing purposes)"""
 def set_points(n):
     global points
     points = n
 
+    
 def set_increase(n):
     global increase
     increase = n
 
+    
 def set_level(n):
     global level
     level = n
 
+    
 def set_keyone(n):
     global keyone
     keyone = n
