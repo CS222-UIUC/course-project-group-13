@@ -1,6 +1,9 @@
 """contains test cases that return either true (passed) or false (failed)"""
 from backend_rs import clue_one_password
 from backend_rs import clue_two_password
+from backend_rs import clue_three_password
+from backend_rs import level_changer
+from backend_rs import year_puzzle_one
 from backend_rs import get_key_one_for_inventory
 from backend_rs import print_increase
 from backend_rs import print_keyone
@@ -54,6 +57,7 @@ else:
 
 print("")
 print("Testing if level increases when points reach threshold")
+old_level = print_level()
 oldlevel = print_level()
 oldpoints = print_points()
 get_key_one_for_inventory()
@@ -78,7 +82,71 @@ if print_keyone() == 1:
     num_passed = num_passed + 1
 else:
     num_failed = num_failed + 1
+    
+print("")
+print("Testing if stage changes correctly using level_increase")
+print(print_level())
+print(print_level() > old_level)
+if print_level() > old_level:
+    num_passed = num_passed + 1
+else:
+    num_failed = num_failed + 1
 
+print("")
+print("Testing if points reset when moving to next level")
+print(print_points() == 0)
+if print_points() == 0:
+    num_passed = num_passed + 1
+else:
+    num_failed = num_failed + 1
+    
+print("")
+print("Testing if points increase when answering clue 3 puzzle correctly")
+old_points = print_points()
+clue_three_password("binary")
+print(print_points() == old_points + print_increase())
+if print_points() == old_points + print_increase():
+    num_passed = num_passed + 1
+else:
+    num_failed = num_failed + 1
+    
+print("")
+print("Testing if year puzzle helps player if input is too large")
+year_puzzle_one(100000000000)
+print("True")
+
+print("")
+print("Testing if year puzzle helps player if input is too small")
+year_puzzle_one(10)
+print("True")
+
+print("")
+print("Testing if year puzzle works correctly")
+old_increase = print_increase()
+year_puzzle_one(1980)
+print(print_increase() < old_increase)
+if print_increase() < old_increase:
+    num_passed = num_passed + 1
+else:
+    num_failed = num_failed + 1
+old_points = print_points()
+year_puzzle_one(1996)
+print(print_points() > old_points)
+if print_points() > old_points:
+    num_passed = num_passed + 1
+else:
+    num_failed = num_failed + 1
+
+print("")
+if num_failed == 0:
+    print("All pre-input tests passed")
+else:
+    print("Tests passed: ")
+    print(num_passed)
+    print("Tests failed: ")
+    print(num_failed)
+
+print("")
 #tested behavior in terminal because requires user input -- unsure if there's a way to test it more intuitively
 print()
 set_increase(3)
