@@ -4,7 +4,11 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
 
-#registration and login pages for user
+#homepage
+def homepage(request):
+    return render(request, 'homepage.html')
+
+#registration page for user
 def register(request):
     if request.method == 'POST':
         username = request.POST['username']
@@ -20,6 +24,7 @@ def register(request):
         
     return render(request, 'register.html')
 
+#login page for user
 def login(request):
     if request.method == 'POST':
         username = request.POST['username']

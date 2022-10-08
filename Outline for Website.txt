@@ -5,17 +5,27 @@ Contains log-in page and instructions, along with some visual theming/style
 
 Stage 1: 
 •	Contains these puzzles: clue_one_password (a riddle about vectors), clue_two_password (decoding a message)
-•	Contains hidden objects: links to translation (for decode puzzle), bonus attempts at questions for this stage, two pictures for use in stage 2
-•	Uses the following features: text box (to type password), typing directly onto web page, inventory (allows player to check whether a reward can be used to continue the game), points/attempts display, theming/style (using CSS)
+•	Contains hidden objects: links to translation (for decode puzzle), bonus attempts at questions for this stage, 
+    two pictures for use in stage 2
+•	Uses the following features: text box (to type password), typing directly onto web page, inventory 
+    (allows player to check whether a reward can be used to continue the game), points/attempts display, 
+    theming/style (using CSS)
 
 Stage 2: 
-•	Contains these puzzles: clue_three_password (identifying what the pictures found in the previous stage represent), directional_lock (player inputs the order of the directions used to solve a maze), clue_four_password (a 3-letter code representing the acronym of the maze’s traversal)
-•	Contains hidden objects: maze (which player uses to solve directional lock), hint (that maze will be used in two different puzzles), numbers for next level’s code 
-•	Uses the following features: virtual UV light (to uncover numbers for next level’s code), text box, points/attempts display, inventory, theming/style (CSS)
+•	Contains these puzzles: clue_three_password (identifying what the pictures found in the previous stage 
+    represent), directional_lock (player inputs the order of the directions used to solve a maze), 
+    clue_four_password (a 3-letter code representing the acronym of the maze’s traversal)
+•	Contains hidden objects: maze (which player uses to solve directional lock), hint (that maze will be used in 
+    two different puzzles), numbers for next level’s code 
+•	Uses the following features: virtual UV light (to uncover numbers for next level’s code), text box, 
+    points/attempts display, inventory, theming/style (CSS)
 
 Stage 3:
-•	Contains these puzzles: 4-digit code (representing a year, as obtained through the 4 numbers from the previous stage) and 4-letter code (name of a programming language developed during that year), matching puzzle (for users to match different common algorithm names with their descriptions in riddle format)
+•	Contains these puzzles: 4-digit code (representing a year, as obtained through the 4 numbers from the previous 
+    stage) and 4-letter code (name of a programming language developed during that year), matching puzzle (for 
+    users to match different common algorithm names with their descriptions in riddle format)
 •	Contains hidden objects: timeline (which helps players find the correct event during a certain year)
-•	Uses the following features: text box, on-screen touch/click-based lock (for numeric codes), click-and-drag matching tool (to solve algorithm-related puzzle)
+•	Uses the following features: text box, on-screen touch/click-based lock (for numeric codes), click-and-drag 
+    matching tool (to solve algorithm-related puzzle)
 
 Final Page: Congratulates the user and displays the score/time used
