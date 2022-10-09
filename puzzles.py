@@ -1,5 +1,6 @@
 from backend_rs import clue_one_password
 from backend_rs import clue_two_password
+from backend_rs import clue_three_password
 from backend_rs import get_key_one_for_inventory
 
 """includes the implementations of the puzzles"""
@@ -38,6 +39,19 @@ def decode():
         else:
             return
 
+def riddle2():
+    while True:
+        response = input("I'm used to build a computer, but you can't hold me in your hands. There's two shapes I can take: a line or a circle. What am I? ")
+        correct = clue_three_password(response)
+        if correct == 1:
+            return
+        elif correct == 0:
+            again = input("Would you like to try again? Y/N ")
+            if again == "N":
+                return
+        else:
+            return
+
         
 def riddle_automatic():
 #  used only for testing, so has pre-set input. 
@@ -64,6 +78,19 @@ def decode_automatic():
         print()
         response = "This project deserves an A!"
         correct = clue_two_password(response)
+        if correct == 1:
+            return
+        elif correct == 0:
+            again = input("Would you like to try again? Y/N ")
+            if again == "N":
+                return
+        else:
+            return
+
+def riddle2_automatic():
+    while True:
+        response = "binary"
+        correct = clue_three_password(response)
         if correct == 1:
             return
         elif correct == 0:

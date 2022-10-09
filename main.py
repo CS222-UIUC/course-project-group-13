@@ -16,8 +16,10 @@ from backend_rs import set_points
 
 from puzzles import riddle
 from puzzles import decode
+from puzzles import riddle2
 from puzzles import riddle_automatic
 from puzzles import decode_automatic
+from puzzles import riddle2_automatic
 
 num_failed = 0
 num_passed = 0
@@ -162,6 +164,11 @@ set_increase(3)
 print("Testing if puzzle 2 behaves correctly...")
 # decode()
 decode_automatic()
+
+print()
+set_increase(3)
+print("Testing if puzzle 3 behaves correctly...")
+riddle2_automatic()
 
 print("")
 if num_failed == 0:
