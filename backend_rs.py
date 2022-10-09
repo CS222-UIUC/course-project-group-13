@@ -29,7 +29,7 @@ def level_changer():
     increase = 3
     if level == 3:
         if keythree == 1:
-            print("Congratulations! You finished the escape room")
+            print("Congratulations! You are able to move on to the next room.")
     return level
 
 

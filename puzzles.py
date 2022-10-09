@@ -3,8 +3,50 @@ from backend_rs import clue_two_password
 from backend_rs import clue_three_password
 from backend_rs import get_key_one_for_inventory
 from backend_rs import year_puzzle_one
+from backend_rs import print_level
 
 """includes the implementations of the puzzles"""
+
+def puzzle_chooser():
+    """allows player to choose a puzzle they would like to attempt (this will change once we start the front end)"""
+    level = print_level()
+
+    if (level == 1):
+        choice = 0
+        print("You are in Room 1 of the escape room. You look around and see two tables, each with an old computer. What would you like to do?")
+        print("1: Look at the computer on the left")
+        print("2: Look at the computer on the right")
+        while True:
+            choice = int(input("Enter either 1 or 2: "))
+            if choice == 1 or choice == 2:
+                break
+            else:
+                print("Invalid input.")
+        if choice == 1:
+            print("As you walk closer to the computer on the left, you see a sticky note with a riddle on it. On the screen of the computer, there is a place to put your answer:")
+            riddle()
+        if choice == 2:
+            print("The computer on the right has a notepad next to it with another riddle scrawled on it in messy handwriting. The screen of the computer has a place to put your answer:")
+            riddle2()
+        
+    elif (level == 2):
+        choice = 0
+        print("You walk into the next room, where you see a safe with a 4-number keypad and a nonsensical message written on one of the walls in spraypaint.")
+        print("What would you like to do?")
+        print("1: Walk closer to the safe")
+        print("2: Walk closer to the wall")
+        while True:
+            choice = int(input("Enter either 1 or 2: "))
+            if choice == 1 or choice == 2:
+                break
+            else:
+                print("Invalid input.")
+        if choice == 1:
+            print("When you walk up to the safe, you see a clue next to the keypad. ")
+            year_puzzle()
+        if choice == 2:
+            print("You walk closer to the wall with the message on it, and none of it makes sense to you.")
+            decode()
 
 def riddle():
 # using input for now but might have to change when we implement the front end
