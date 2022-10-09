@@ -20,6 +20,7 @@ from puzzles import riddle2
 from puzzles import riddle_automatic
 from puzzles import decode_automatic
 from puzzles import riddle2_automatic
+from puzzles import year_puzzle_automatic
 
 num_failed = 0
 num_passed = 0
@@ -134,21 +135,12 @@ if print_increase() < old_increase:
 else:
     num_failed = num_failed + 1
 old_points = print_points()
-year_puzzle_one(1996)
+year_puzzle_one(1998)
 print(print_points() > old_points)
 if print_points() > old_points:
     num_passed = num_passed + 1
 else:
     num_failed = num_failed + 1
-
-print("")
-if num_failed == 0:
-    print("All pre-input tests passed")
-else:
-    print("Tests passed: ")
-    print(num_passed)
-    print("Tests failed: ")
-    print(num_failed)
 
 print("")
 #tested behavior in terminal because requires user input -- unsure if there's a way to test it more intuitively
@@ -169,6 +161,11 @@ print()
 set_increase(3)
 print("Testing if puzzle 3 behaves correctly...")
 riddle2_automatic()
+
+print()
+set_increase(3)
+print("Testing if puzzle 4 behaves correctly...")
+year_puzzle_automatic()
 
 print("")
 if num_failed == 0:

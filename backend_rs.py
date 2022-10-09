@@ -5,7 +5,7 @@ from ast import Num
 PASSWORD1 = "vector"
 PASSWORD2 = "This project deserves an A!"
 PASSWORD3 = "binary"
-YEAR = 1996
+YEAR = 1998
 
 level = 1  # indicates the current number of the game's level
 points = 0  # the number of points the player has
@@ -94,8 +94,10 @@ def year_puzzle_one(integer_input):
     global increase
     if integer_input / 1000 == 0:
         print("Your input is too small")
+        return 2
     elif integer_input / 1000 >= 2:
         print("Your input is too large")
+        return 2
     else:
         if integer_input == YEAR:
             points = points + increase

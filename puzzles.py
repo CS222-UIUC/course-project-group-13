@@ -2,6 +2,7 @@ from backend_rs import clue_one_password
 from backend_rs import clue_two_password
 from backend_rs import clue_three_password
 from backend_rs import get_key_one_for_inventory
+from backend_rs import year_puzzle_one
 
 """includes the implementations of the puzzles"""
 
@@ -52,6 +53,19 @@ def riddle2():
         else:
             return
 
+def year_puzzle():
+    while True:
+        response = input("In what year was Google founded?")
+        correct = year_puzzle_one(int(response))
+        if correct == 1:
+            return
+        elif correct == 0:
+            again = input("Would you like to try again? Y/N ")
+            if again == "N":
+                return
+        elif correct == -1:
+            return
+
         
 def riddle_automatic():
 #  used only for testing, so has pre-set input. 
@@ -98,4 +112,17 @@ def riddle2_automatic():
             if again == "N":
                 return
         else:
+            return
+
+def year_puzzle_automatic():
+    while True:
+        response = "1998"
+        correct = year_puzzle_one(int(response))
+        if correct == 1:
+            return
+        elif correct == 0:
+            again = input("Would you like to try again? Y/N ")
+            if again == "N":
+                return
+        elif correct == -1:
             return
