@@ -13,6 +13,12 @@ from backend_rs import set_increase
 from backend_rs import set_keyone
 from backend_rs import set_level
 from backend_rs import set_points
+from backend_rs import directional_lock
+from backend_rs import matching_display
+from backend_rs import print_matchlist
+from backend_rs import matchlist
+from backend_rs import check_match
+from backend_rs import create_match
 
 from puzzles import riddle
 from puzzles import decode
@@ -141,6 +147,90 @@ if print_points() > old_points:
     num_passed = num_passed + 1
 else:
     num_failed = num_failed + 1
+    
+    
+print("")
+print("Testing if maze function works correctly")
+old_increase = print_increase()
+directional_lock("UDLRUDLRU")
+print(print_increase() < old_increase)
+if print_increase() < old_increase:
+    num_passed = num_passed + 1
+else:
+    num_failed = num_failed + 1
+old_points = print_points()
+directional_lock("DRDLDLDRD")
+print(print_points() > old_points)
+if print_points() > old_points:
+    num_passed = num_passed + 1
+else:
+    num_failed = num_failed + 1
+    
+    
+print("")
+print("Testing if create matching function works correctly")
+matching_display()
+print("")
+create_match("A")
+create_match("B")
+create_match("C")
+create_match("D")
+create_match("E")
+print(matchlist)
+print(matchlist[0] == "A")
+if (matchlist[0] == "A"):
+    num_passed = num_passed + 1
+else:
+    num_failed = num_failed + 1
+print(matchlist[2] == "C")
+if (matchlist[2] == "C"):
+    num_passed = num_passed + 1
+else:
+    num_failed = num_failed + 1
+# checks if too many matches are created
+create_match("F")
+print(matchlist[4] == "E")
+if (matchlist[4] == "E"):
+    num_passed = num_passed + 1
+else:
+    num_failed = num_failed + 1
+
+print("")
+print("Testing if check_matching function works correctly")
+print("Check match output should say 'The # entry is wrong' for incorrect match")
+
+print(check_match() == 0)
+if check_match() == 0:
+    num_passed = num_passed + 1
+else:
+    num_failed = num_failed + 1
+
+create_match("D")
+create_match("A")
+create_match("E")
+create_match("B")
+create_match("B")
+print(matchlist)
+
+print(check_match() == 0)
+if check_match() == 0:
+    num_passed = num_passed + 1
+else:
+    num_failed = num_failed + 1
+
+create_match("D")
+create_match("A")
+create_match("E")
+create_match("B")
+create_match("C")
+
+print(check_match() == 1)
+if check_match() == 1:
+    num_passed = num_passed + 1
+else:
+    num_failed = num_failed + 1
+
+
 
 print("")
 #tested behavior in terminal because requires user input -- unsure if there's a way to test it more intuitively
