@@ -19,6 +19,14 @@ from backend_rs import print_matchlist
 from backend_rs import matchlist
 from backend_rs import check_match
 from backend_rs import create_match
+from backend_rs import guess_increase
+from backend_rs import guess_puzzle
+from backend_rs import guess_puzzle_answer
+from backend_rs import guess_increase
+from backend_rs import guess_puzzle_automatic_easy
+from backend_rs import mystery_number
+from backend_rs import print_guess_increase
+from backend_rs import print_mystery
 
 from puzzles import riddle
 from puzzles import decode
@@ -229,6 +237,42 @@ if check_match() == 1:
     num_passed = num_passed + 1
 else:
     num_failed = num_failed + 1
+    
+    
+    
+print("")
+print("Testing if guess random number function works and sets correct point values")
+guess_puzzle_automatic_easy()
+print("Mystery number is " + str(print_mystery()))
+print("Guess increase is " + str(print_guess_increase()))
+if print_mystery() > 0:
+    print("True")
+    num_passed = num_passed + 1
+else:
+    print("False")
+    num_failed = num_failed + 1
+if print_mystery() < 6:
+    print("True")
+    num_passed = num_passed + 1
+else:
+    print("False")
+    num_failed = num_failed + 1
+if print_guess_increase() == 2:
+    print("True")
+    num_passed = num_passed + 1
+else:
+    print("False")
+    num_failed = num_failed + 1
+
+print("Testing if points change with random number function")
+previous_points = print_points()
+guess_puzzle_answer(print_mystery())
+if print_points == previous_points + 2:
+    print("True")
+    num_passed = num_passed + 1
+else:
+    print("False")
+
 
 
 
