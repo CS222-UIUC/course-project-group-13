@@ -1,5 +1,8 @@
 """includes a few functions to determine whether players solved puzzles correctly"""
 from ast import Num
+import time
+import datetime
+import random
 
 
 PASSWORD1 = "vector"
@@ -15,9 +18,12 @@ keyone = 0  # checks if a player has obtained a key or prize from the inventory
 keytwo = 0
 keythree = 0
 completed = 0
+finished_unplayable = 0
 matchlist = (['Z', 'Z', 'Z', 'Z', 'Z'])
 index = 0
 credentials = ([["testusername", "testpassword", "testscore"]])
+mystery_number = 0
+guess_increase = 0
 
 
 def create_account_backup(username, password):
@@ -188,6 +194,7 @@ def create_match(letter):
         matchlist[index] = letter
         index = index + 1
 
+
 def reset_matchlist():
     global matchlist
     global index
@@ -198,6 +205,7 @@ def reset_matchlist():
     create_match('Z')
     create_match('Z')
     index = 0
+
 
 def check_match():
     global matchlist
@@ -216,7 +224,94 @@ def check_match():
         points = points + increase
     return 1
 
+
+def timer(sec):
+    global finished_unplayable
+    global points
+    global level
+    x = sec
+    while x > 0:
+        timer = datetime.timedelta(seconds = x)
+        print(timer, end="\r")
+    finished_unplayable = 1
+    print("Your time is up. Game is over.")
+    print("Your level: " + str(level))
+    print("Your score: " + str(points))
+
+
+def guess_puzzle():
+    global mystery_number
+    global guess_increase
+    mode = input("Please type 'easy' (2 points), 'medium' (4 points), or 'hard' (6 points)")
+    if mode == "easy":
+        print("Guess a number between 1 and 5 inclusive, within 1. You only have one attempt")
+        mystery_number = random.randint(1, 5)
+        guess_increase = 2
+    elif mode == "medium":
+        print("Guess a number between 1 and 8 inclusive, within 1. You only have one attempt")
+        mystery_number = random.randint(1, 8)      
+        guess_increase = 4
+    elif mode == "hard":
+        print("Guess a number between 1 and 12 inclusive, within 1. You only have one attempt")
+        mystery_number = random.randint(1, 12)
+        guess_increase = 6
+    else:
+        print("Invalid string")
+        guess_puzzle()
+
+
+def guess_puzzle_automatic_easy():
+    global mystery_number
+    global guess_increase
+    mode = "easy"
+    if mode == "easy":
+        print("Guess a number between 1 and 5 inclusive, within 1. You only have one attempt")
+        mystery_number = random.randint(1, 5)
+        guess_increase = 2
+    elif mode == "medium":
+        print("Guess a number between 1 and 8 inclusive, within 1. You only have one attempt")
+        mystery_number = random.randint(1, 8)      
+        guess_increase = 4
+    elif mode == "hard":
+        print("Guess a number between 1 and 12 inclusive, within 1. You only have one attempt")
+        mystery_number = random.randint(1, 12)
+        guess_increase = 6
+    else:
+        print("Invalid string")
+        guess_puzzle()
+
+
+
+def guess_puzzle_answer(answer):
+    global mystery_number
+    global points
+    global guess_increase
+    if answer == mystery_number:
+        print("Correct! You earned " + str(guess_increase) + " points")
+        points = points + guess_increase
+    elif answer+1 == mystery_number:
+        print("Correct! You earned " + str(guess_increase) + " points")
+        print("Actual number: " + str(mystery_number))
+        points = points + guess_increase
+    elif answer-1 == mystery_number:
+        print("Correct! You earned " + str(guess_increase) + " points")
+        print("Actual number: " + str(mystery_number))
+        points = points + guess_increase
+    else:
+        print("Incorrect. This puzzle is now unavailable")
+        print("Actual number: " + str(mystery_number))
         
+
+def print_guess_increase() -> int:
+    """getter for guess_increase"""
+    return guess_increase
+
+
+def print_mystery() -> int:
+    """getter for mystery_number"""
+    return mystery_number
+
+
 def print_points() -> int:
     """getter for points"""
     return points
