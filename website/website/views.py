@@ -38,3 +38,4 @@ def login(request):
             messages.info(request, 'Either the username or password is invalid')
             return redirect('login')
     return render(request, 'login.html')
+
