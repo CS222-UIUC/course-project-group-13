@@ -39,3 +39,14 @@ def login(request):
             return redirect('login')
     return render(request, 'login.html')
 
+def stagone(request):
+    if request.method == 'POST':
+        clue_one_attempt = request.POST['clue_one_password']
+        if (clue_one_attempt == 'vector'):
+            messages.info(request, 'Congrats')
+        else:
+            if (attempts > 0):
+                return
+            else:
+                attempts = attempts - 1
+    return render(request, 'stageone.html')
