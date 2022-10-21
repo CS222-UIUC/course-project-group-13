@@ -9,7 +9,7 @@ PASSWORD1 = "vector"
 PASSWORD2 = "This project deserves an A!"
 PASSWORD3 = "binary"
 YEAR = 1998
-DIRECTIONS = "DRDLDLDRD"
+DIRECTIONS = "DLDRURDLD"
 
 level = 1  # indicates the current number of the game's level
 points = 0  # the number of points the player has
