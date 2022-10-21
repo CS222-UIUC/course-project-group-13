@@ -52,3 +52,6 @@ def stageone(request):
             else:
                 attempts = attempts - 1
     return render(request, 'stageone.html')
+
+def game_end(request):
+    return render(request, 'game-end.html')
