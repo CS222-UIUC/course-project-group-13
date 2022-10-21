@@ -167,7 +167,7 @@ if print_increase() < old_increase:
 else:
     num_failed = num_failed + 1
 old_points = print_points()
-directional_lock("DRDLDLDRD")
+directional_lock("DLDRURDLD")
 print(print_points() > old_points)
 if print_points() > old_points:
     num_passed = num_passed + 1
