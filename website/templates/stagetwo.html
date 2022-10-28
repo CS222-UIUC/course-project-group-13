@@ -6,3 +6,19 @@ clue_four_password (a 3-letter code representing the acronym of the maze’s tra
 two different puzzles), numbers for next level’s code 
 •	Uses the following features: virtual UV light (to uncover numbers for next level’s code), text box, 
 points/attempts display, inventory, theming/style (CSS) -->
+
+<form action="" method="POST">
+    <div id="something_container"></div>
+    <p>I'm used to build a computer, but you can't hold me in your hands. There's two shapes I can take: a line or a circle. What am I? </p>
+    <input type="text" name="clue_three_password"/>
+    <input type="submit"/>
+
+
+    <!-- Load React. -->
+    <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+    <!-- Load our React component. -->
+    <script src="website\templates\something.js"></script>
+</form>
