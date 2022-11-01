@@ -5,19 +5,77 @@
 •	Contains hidden objects: timeline (which helps players find the correct event during a certain year)
 •	Uses the following features: text box, on-screen touch/click-based lock (for numeric codes), click-and-drag 
     matching tool (to solve algorithm-related puzzle) -->
+    
+    <!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="icon" href="/favicon.ico"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#000000"/><meta name="description" content="Web site created using create-react-app"/><link rel="apple-touch-icon" href="/logo192.png"/><link rel="manifest" href="/manifest.json"/><title>React App</title><script defer="defer" src="/static/js/main.0215976b.js"></script><link href="/static/css/main.073c9b0a.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div></body></html>
 
+    <h2>Stage 3: Find clues and enter your answers to them in text boxes</h2>
+    
+    
+    <!-- Start Timer -->
+    
+    
+    <p>This stage is available for 3 minutes (180 seconds).</p>
+    
+    <button onclick="setTimeout(myFunction, 180000);">Start Game</button>
+    
+    <script>
+    function myFunction() {
+      alert('Your time is up. Game is over.');
+    }
+    </script>
+    
+    <br>
+    <br>
+    
+    
+    <h4>
+    <p>1. Rotation__________________________________A. DFS</p>
+    <p>2. Stack_____________________________________B. * or &</p>
+    <p>3. Segmentation-fault-causer_________________C. Valgrind</p>
+    <p>4. Allows for change_________________________D. AVL</p>
+    <p>5. Memory____________________________________E. NULL</p></h4>
+    
+    
+    <br>
+    
     <form action="" method="POST">
         <div id="something_container"></div>
-        <p>In what year was Google founded? </p>
-        <input type="text" name="clue_three_password"/>
-        <input type="submit"/>
+        <p>Numerical Guessing Puzzle: Type difficulty "easy", "medium", or "hard"  </p>
+        <input type="text">
+            <div id="something_container"></div>
+            <p>Numerical Guessing Puzzle: Submit your guess here!  </p>
+            <input type="text" id="guess_puzzle" name="guess_puzzle" minlength="2" maxlength="2" placeholder="" size="2">
+            <input type="submit"/>
+            
+            <body>
+                <div class="container">
+                    <form action="file:///C:\Users\rohiths2 illinois\hello\Guess Puzzle Backup.py">
+                        <button class="btn btn-danger btn-lg">Open in Terminal</button>
+                    </form>
+                </div>
+            </body>
+            
+    <br>
     
+            
+            
+    <form action="" method="POST">
+            <div id="something_container"></div>
+            <p>Enter a 5-digit capital letter code:  </p>
+            <input type="text" id="check_match" name="check_match" minlength="5" maxlength="2" placeholder="" size="5">
+            <input type="submit"/>
     
-        <!-- Load React. -->
-        <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
-        <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-    
-        <!-- Load our React component. -->
-        <script src="website\templates\something.js"></script>
-    </form>
+            
+            
+            
+            
+        
+        
+            <!-- Load React. -->
+            <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+            <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+            <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+        
+            <!-- Load our React component. -->
+            <script src="website\templates\something.js"></script>
+        </form>
