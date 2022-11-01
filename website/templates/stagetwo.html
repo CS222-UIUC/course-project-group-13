@@ -7,11 +7,102 @@ two different puzzles), numbers for next level’s code
 •	Uses the following features: virtual UV light (to uncover numbers for next level’s code), text box, 
 points/attempts display, inventory, theming/style (CSS) -->
 
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="icon" href="/favicon.ico"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#000000"/><meta name="description" content="Web site created using create-react-app"/><link rel="apple-touch-icon" href="/logo192.png"/><link rel="manifest" href="/manifest.json"/><title>React App</title><script defer="defer" src="/static/js/main.0215976b.js"></script><link href="/static/css/main.073c9b0a.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div></body></html>
+
+<h2>Stage 2: Find clues and enter your answers to them in text boxes</h2>
+
+
+<!-- Start Timer -->
+
+
+<p>This stage is available for 4 minutes (240 seconds).</p>
+
+<button onclick="setTimeout(myFunction, 240000);">Start Game</button>
+
+<script>
+function myFunction() {
+  alert('Your time is up. Game is over.');
+}
+</script>
+
+<br>
+
+<!-- A clue for player to solve the year puzzle -->
+<br>
+
+<p>Code that may help you solve a puzzle:</p>
+
+<h2>std::string letters = "gooGle"<h2>
+<h2>println(letters[4] + letters[1] + letters[1] + letters[3])</h2>
+
+<br>
+
+
+<!-- Clue 3 -->
+
 <form action="" method="POST">
     <div id="something_container"></div>
     <p>I'm used to build a computer, but you can't hold me in your hands. There's two shapes I can take: a line or a circle. What am I? </p>
-    <input type="text" name="clue_three_password"/>
+    <input type="text" id="clue_three_password" name="clue_three_password" minlength="6" maxlength="6" placeholder="- - n - - -">
     <input type="submit"/>
+    
+<body>
+    <div class="container">
+        <form action="file:///C:\Users\rohiths2 illinois\hello\Riddle Two Call (backup).py">
+            <button class="btn btn-danger btn-lg">Open in Terminal</button>
+        </form>
+    </div>
+</body>
+
+<br>
+<br>
+
+
+<!-- Year -->
+
+<form action="" method="POST">
+    <div id="something_container"></div>
+    <p>In what year was Google founded? </p>
+    <input type="text" id="year_puzzle" name="year_puzzle" minlength="4" maxlength="4" placeholder="- - - -">
+    <input type="submit"/>
+    
+<body>
+    <div class="container">
+        <form action="file:///C:\Users\rohiths2 illinois\hello\Year Puzzle.py">
+            <button class="btn btn-danger btn-lg">Open in Terminal</button>
+        </form>
+    </div>
+</body>
+
+<br>
+<br>
+
+
+
+<!-- Maze -->
+
+<form action="" method="POST">
+    <div id="something_container"></div>
+    <p>Enter Directions U, L, D, and/or R. </p>
+    <input type="text" id="maze_puzzle" name="maze_puzzle">
+    <input type="submit"/>
+    
+<br>
+<br>
+<br>
+<br>
+
+
+<!-- Display Images -->
+
+
+
+<img src="https://media.istockphoto.com/vectors/maze-or-labyrinth-iconrectangular-shapeisolated-on-white-back-vector-id835481450?k=20&m=835481450&s=612x612&w=0&h=lf-fB0PY3cKGLQxz8gbh62EQOHmLXjeqaPTNwvSdpQY=" alt="maze">
+
+
+    
+
+
 
 
     <!-- Load React. -->
