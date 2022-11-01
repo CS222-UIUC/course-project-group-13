@@ -4,6 +4,7 @@ from backend_rs import clue_three_password
 from backend_rs import get_key_one_for_inventory
 from backend_rs import year_puzzle_one
 from backend_rs import print_level
+from backend_rs import guess_puzzle_answer
 
 """includes the implementations of the puzzles"""
 
@@ -168,3 +169,9 @@ def year_puzzle_automatic():
                 return
         elif correct == -1:
             return
+
+
+def guess_number_puzzle():
+    while True:
+        guess_puzzle_answer(input("Your guess here:"))
+        return
