@@ -40,6 +40,9 @@ def login(request):
     return render(request, 'login.html')
 
 def game_begin(request):
+    if not request.user.is_authenticated:
+        messages.info(request, 'You are not logged in')
+        return redirect('login')
     return render(request, 'game-begin.html')
 
 #first stage

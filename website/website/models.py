@@ -7,3 +7,6 @@ class Profile(models.Model):
     #TODO: create an inventory for the user
     def __str__(self):
         return self.username
+
+    def getPoints(self):
+        return self.points
