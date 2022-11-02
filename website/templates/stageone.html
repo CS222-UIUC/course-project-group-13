@@ -24,13 +24,16 @@ function myFunction() {
 
 
 <!-- Puzzles and Features -->
+{% for message in messages %}
+<h3>{{message}}</h3>
+{% endfor %}
 
-<form action="" method="POST">
+<form action="" method="POST">{% csrf_token %}
     <div id="something_container"></div>
     <p>Whether I'm 1-Dimensional, 2-Dimensional, or 3-Dimensional, I'm still the same. You can change my size, but you can't change my type or my name. What am I?</p>
     <input type="text" id="clue_one_password" name="clue_one_password" minlength="6" maxlength="6" placeholder="v - - - - -">
     <input type="submit"/>
-    
+</form> 
     
     
     

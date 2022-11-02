@@ -39,6 +39,9 @@ def login(request):
             return redirect('login')
     return render(request, 'login.html')
 
+def game_begin(request):
+    return render(request, 'game-begin.html')
+
 #first stage
 def stageone(request):
     if request.method == 'POST':
