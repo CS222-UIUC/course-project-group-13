@@ -33,6 +33,8 @@
 <!-- Start Timer -->
 
 <p>This stage is available for 5 minutes (300 seconds).</p>
+<br>
+<a href="stagetwo.html">Go to next stage</a> <br>
 
 <button onclick="setTimeout(myFunction, 300000);">Start Game</button>
 
@@ -42,6 +44,7 @@ function myFunction() {
 }
 </script>
 
+<form action="game-begin.html" method="POST">
 
 <!-- Puzzles and Features -->
 {% for message in messages %}
