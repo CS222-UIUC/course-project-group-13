@@ -27,10 +27,21 @@
     
 <!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="icon" href="/favicon.ico"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#000000"/><meta name="description" content="Web site created using create-react-app"/><link rel="apple-touch-icon" href="/logo192.png"/><link rel="manifest" href="/manifest.json"/><title>React App</title><script defer="defer" src="/static/js/main.0215976b.js"></script><link href="/static/css/main.073c9b0a.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div></body></html>
 
+
 <h2>Stage 1: Find clues and enter your answers to them in text boxes</h2>
 
+<!-- Display Points and Level -->
+
+<p id="stats"  style="color:greenyellow;font-size:18px;"></p>
+<script>
+    var points = 0;
+    var attempts = 3;
+    var level = 1;
+    document.getElementById("stats").innerHTML = "Level: " + level + ", Points: " + points + ", Attempts Left: " + attempts;
+</script>
 
 <!-- Start Timer -->
+
 
 <p>This stage is available for 5 minutes (300 seconds).</p>
 <br>
@@ -54,19 +65,18 @@ function myFunction() {
 <form action="" method="POST">{% csrf_token %}
     <div id="something_container"></div>
     <p>Whether I'm 1-Dimensional, 2-Dimensional, or 3-Dimensional, I'm still the same. You can change my size, but you can't change my type or my name. What am I?</p>
+    <p id="puz1display"  style="color:white;font-size:12px;">What you submitted: </p>
     <input type="text" id="clue_one_password" name="clue_one_password" minlength="6" maxlength="6" placeholder="v - - - - -">
-    <input type="submit"/>
+    <input type="submit" onclick="puz1response()"/>
+    <script type="text/javascript">
+        var puz1answer;
+        function puz1response() {
+            puz1answer= document.getElementById('clue_one_password').value;
+            localStorage.setItem('store1', puz1answer);
+            document.getElementById("puz1display").innerHTML = "What you submitted: " + puz1answer;
+        }
+    </script>
 </form> 
-    
-    
-    
-<body>
-    <div class="container">
-        <form action="file:///C:\Users\rohiths2 illinois\hello\Clue One Call (backup).py">
-            <button class="btn btn-danger btn-lg">Open in Terminal</button>
-        </form>
-    </div>
-</body>
 
 
 
@@ -79,16 +89,17 @@ function myFunction() {
   <div id="something_container"></div>
   <p>Decode the following message: </p>
   <p>Wklv surmhfw ghvhuyhv dq D!: </p>
+  <p id="puz2display"  style="color:white;font-size:12px;">What you submitted: </p>
   <textarea id="Clue 2 Puzzle Response" name="Clue 2 Puzzle Response" rows="2" cols="40"></textarea>
-  <input type="submit"/>
-    
-<body>
-    <div class="container">
-        <form action="file:///C:\Users\rohiths2 illinois\hello\Decode Clue Two Call (backup).py">
-            <button class="btn btn-danger btn-lg">Open in Terminal</button>
-        </form>
-    </div>
-</body>
+  <input type="submit" onclick="function2()"/>
+  <script type="text/javascript">
+      var puz2response;
+      function function2() {
+      puz2response = document.getElementById('Clue 2 Puzzle Response').value;
+          localStorage.setItem('store2', puz2response);
+          document.getElementById("puz2display").innerHTML = "What you submitted: " + puz2response;
+      }
+  </script>
 
 
     
