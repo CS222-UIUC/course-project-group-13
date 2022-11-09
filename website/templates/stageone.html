@@ -58,9 +58,6 @@ function myFunction() {
 <!-- <form action="game-begin.html" method="POST"> -->
 
 <!-- Puzzles and Features -->
-{% for message in messages %}
-<h3>{{message}}</h3>
-{% endfor %}
 
 <form action="" method="POST" id="puzzle_one">{% csrf_token %}
     <div id="something_container"></div>
@@ -79,7 +76,13 @@ function myFunction() {
     </script>
 </form> 
 
-
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
 
 
 <br>

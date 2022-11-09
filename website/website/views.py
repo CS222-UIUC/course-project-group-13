@@ -59,7 +59,9 @@ def stageone(request):
             if (clue_one_attempt == 'vector'):
             #TODO: gives user a key
                 one = True
-                messages.info(request, 'Congrats you solved the puzzle')
+                messages.info(request, 'Congrats you solved puzzle one')
+                if (one == True & two == True):
+                    messages.success(request, 'You have finished the stage, want to move on to the next one?')
             else:
                 if (attempts > 0):
                     return
@@ -69,13 +71,24 @@ def stageone(request):
             clue_two_attempt = request.POST['clue_two_password']
             if (clue_two_attempt == "This project deserves an A!"):
                 two = True
-                messages.info(request, 'Congrats you solved the puzzle')
-        if (one & two):
-            messages.success(request, 'You have finished the stage, want to move on to the next one?')
+                messages.info(request, 'Congrats you solved puzzle two')
+                if (one == True & two == True):
+                    messages.success(request, 'You have finished the stage, want to move on to the next one?')
     return render(request, 'stageone.html')
 
 #second stage
 def stagetwo(request):
+    if request.method == 'POST':
+        if request.POST.get('form_type') == 'puzzle_three':
+            clue_three_attempt = request.POST['clue_three_passowrd']
+            if (clue_three_attempt == "binary"):
+                messages.info(request, "Congrats you solved puzzle three")
+        if request.POST.get('form_type') == 'puzzle_four':
+            clue_four_attempt = request.POST['year_puzzle']
+            if (clue_four_attempt == '1998'):
+                messages.info(request, 'Congrats you solved puzzle four')
+        if request.POST.get('form_type') == 'puzzle_five':
+            messages.info(request, 'Congrats you solved puzzle five')
     return render(request, 'stagetwo.html')
 
 #third stage
