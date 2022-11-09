@@ -40,14 +40,18 @@ def login(request):
     return render(request, 'login.html')
 
 def game_begin(request):
-    if not request.user.is_authenticated:
-        messages.info(request, 'You are not logged in')
-        return redirect('login')
+    if request.method == 'POST':
+        if not request.user.is_authenticated:
+            messages.info(request, 'You are not logged in')
+            return redirect('login')
+        else:
+            return redirect('stageone')
     return render(request, 'game-begin.html')
 
 #first stage
 def stageone(request):
     if request.method == 'POST':
+        attempts = 3
         clue_one_attempt = request.POST['clue_one_password']
         if (clue_one_attempt == 'vector'):
             #TODO: gives user a key
@@ -57,6 +61,7 @@ def stageone(request):
                 return
             else:
                 attempts = attempts - 1
+        
     return render(request, 'stageone.html')
 
 #second stage

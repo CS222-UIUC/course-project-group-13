@@ -1,7 +1,3 @@
-{% for message in messages %}
-<h3>{{message}}</h3>
-{% endfor %}
-
 <style>
     body {
         background: black;
@@ -27,5 +23,12 @@
     The only way to escape is to solve the coding-related puzzles and mazes that they've made for you. In each part of 
     the room, there will be multiple puzzles for you to solve. If you don't succeed, they'll trap you here and make
     you keep coding forever! Good luck!</p>
-<a href="stageone.html">Click here to enter Room 1!</a>
+
+{% for message in messages %}
+<h3>{{message}}</h3>
+{% endfor %}
+
+<form method="POST" action="">{% csrf_token %}
+    <input type="submit" value="Click here to enter Room 1!"/>
+</form>
     
