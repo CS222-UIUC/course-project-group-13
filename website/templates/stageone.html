@@ -62,8 +62,9 @@ function myFunction() {
 <h3>{{message}}</h3>
 {% endfor %}
 
-<form action="" method="POST">{% csrf_token %}
+<form action="" method="POST" id="puzzle_one">{% csrf_token %}
     <div id="something_container"></div>
+    <input type="hidden" name="form_type" value="puzzle_one">
     <p>Whether I'm 1-Dimensional, 2-Dimensional, or 3-Dimensional, I'm still the same. You can change my size, but you can't change my type or my name. What am I?</p>
     <p id="puz1display"  style="color:white;font-size:12px;">What you submitted: </p>
     <input type="text" id="clue_one_password" name="clue_one_password" minlength="6" maxlength="6" placeholder="v - - - - -">
@@ -85,12 +86,13 @@ function myFunction() {
 <br>
 
 
-
+<form action="" method="POST" id="puzzle_two">{% csrf_token %}
   <div id="something_container"></div>
+  <input type="hidden" name="form_type" value="puzzle_two">
   <p>Decode the following message: </p>
   <p>Wklv surmhfw ghvhuyhv dq D!: </p>
   <p id="puz2display"  style="color:white;font-size:12px;">What you submitted: </p>
-  <textarea id="Clue 2 Puzzle Response" name="Clue 2 Puzzle Response" rows="2" cols="40"></textarea>
+  <input type="text" id="clue_two_password" name="clue_two_password" textarea id="Clue 2 Puzzle Response" name="Clue 2 Puzzle Response" rows="2" cols="40"></textarea>
   <input type="submit" onclick="function2()"/>
   <script type="text/javascript">
       var puz2response;
@@ -100,7 +102,7 @@ function myFunction() {
           document.getElementById("puz2display").innerHTML = "What you submitted: " + puz2response;
       }
   </script>
-
+</form>
 
     
 <br>

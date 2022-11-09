@@ -50,18 +50,28 @@ def game_begin(request):
 
 #first stage
 def stageone(request):
+    one = False
+    two = False
     if request.method == 'POST':
         attempts = 3
-        clue_one_attempt = request.POST['clue_one_password']
-        if (clue_one_attempt == 'vector'):
+        if request.POST.get("form_type") == "puzzle_one":
+            clue_one_attempt = request.POST['clue_one_password']
+            if (clue_one_attempt == 'vector'):
             #TODO: gives user a key
-            messages.info(request, 'Congrats')
-        else:
-            if (attempts > 0):
-                return
+                one = True
+                messages.info(request, 'Congrats you solved the puzzle')
             else:
-                attempts = attempts - 1
-        
+                if (attempts > 0):
+                    return
+                else:
+                    attempts = attempts - 1
+        if request.POST.get("form_type") == 'puzzle_two':
+            clue_two_attempt = request.POST['clue_two_password']
+            if (clue_two_attempt == "This project deserves an A!"):
+                two = True
+                messages.info(request, 'Congrats you solved the puzzle')
+        if (one & two):
+            messages.success(request, 'You have finished the stage, want to move on to the next one?')
     return render(request, 'stageone.html')
 
 #second stage
