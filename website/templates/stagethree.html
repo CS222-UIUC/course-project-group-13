@@ -69,11 +69,10 @@
     
     <br>
     
-    <form action="" method="POST">
-        <div id="something_container"></div>
+    <form action="" method="POST" id="puzzle_six">{% csrf_token %}
+        <input type="hidden" name="form_type" value="puzzle_six">
         <p>Numerical Guessing Puzzle: Type difficulty "easy", "medium", or "hard"  </p>
         <input type="text">
-            <div id="something_container"></div>
             <p>Numerical Guessing Puzzle: Submit your guess here!  </p>
             <input type="text" id="guess_puzzle" name="guess_puzzle" minlength="2" maxlength="2" placeholder="" size="2">
             <input type="submit"/>
@@ -90,11 +89,11 @@
     
             
             
-    <form action="" method="POST">
-            <div id="something_container"></div>
-            <p>Enter a 5-digit capital letter code:  </p>
-            <input type="text" id="check_match" name="check_match" minlength="5" maxlength="2" placeholder="" size="5">
-            <input type="submit"/>
+    <form action="" method="POST" id="puzzle_seven">{% csrf_token %}
+        <input type="hidden" name="form_type" value="puzzle_seven">
+        <p>Enter a 5-digit capital letter code:  </p>
+        <input type="text" id="check_match" name="check_match" minlength="5" maxlength="2" placeholder="" size="5">
+        <input type="submit"/>
     
             
             

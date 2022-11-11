@@ -93,6 +93,11 @@ def stagetwo(request):
 
 #third stage
 def stagethree(request):
+    if request.method == 'POST':
+        if request.POST.get('form_type') == 'puzzle_six':
+            clue_six_attempt = request.POST['guess_puzzle']
+        if request.POST.get('form_type') == 'puzzle_seven':
+            clue_seven_attempt = request.POST['clue_match']
     return render(request, 'stagethree.html')
 
 def game_end(request):
