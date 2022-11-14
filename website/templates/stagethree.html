@@ -37,7 +37,7 @@
     <script>
         var points = 0;
         var attempts = 3;
-        var level = 2;
+        var level = 3;
         document.getElementById("stats").innerHTML = "Level: " + level + ", Points: " + points + ", Attempts Left: " + attempts;
     </script>
     
@@ -92,7 +92,7 @@
     <form action="" method="POST" id="puzzle_seven">{% csrf_token %}
         <input type="hidden" name="form_type" value="puzzle_seven">
         <p>Enter a 5-digit capital letter code:  </p>
-        <input type="text" id="check_match" name="check_match" minlength="5" maxlength="2" placeholder="" size="5">
+        <input type="text" id="check_match" name="check_match" minlength="5" maxlength="5" placeholder="" size="5">
         <input type="submit"/>
     
             
@@ -109,3 +109,25 @@
             <!-- Load our React component. -->
             <script src="website\templates\something.js"></script>
         </form>
+
+
+
+
+
+
+        <br>
+
+        <p style="color:chartreuse;font: size 12px;">Preview All Puzzle Responses: Click Submit Query Below</p>
+        <p id="preview_stage3"  style="color:white;font-size:12px;">What you submitted: </p>
+        <input type="submit" onclick="f()"/>
+        <script type="text/javascript">
+            var p6r;
+            var p7r;
+            function f() {
+                p6r = document.getElementById('guess_puzzle').value;
+                p7r = document.getElementById('check_match').value;
+                localStorage.setItem('1', p6r);
+                localStorage.setItem('2', p7r);
+                document.getElementById("preview_stage3").innerHTML = "Puzzle 6 response: " + " " + p6r + ", Puzzle 7 Response: " + p7r;
+            }
+        </script>
