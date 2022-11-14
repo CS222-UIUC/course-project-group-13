@@ -102,7 +102,16 @@ function myFunction() {
         p2r = document.getElementById('clue_two_password').value;
         localStorage.setItem('1', p1r);
         localStorage.setItem('2', p2r);
-        document.getElementById("preview_stage1").innerHTML = "Puzzle 1 response: " + " " + p1r + ", Puzzle 2 Response: " + p2r;
+        var p1a = "incorrect";
+        var p2a = "incorrect";
+        if (p1r == "vector") {
+            p1a = "correct";
+        }
+        if (p2r == "This project deserves an A!") {
+            p2a = "correct";
+        }
+        document.getElementById("preview_stage1").innerHTML = "Puzzle 1 response: " + " " + p1r + "(" + p1a + ")" + ", Puzzle 2 Response: " + p2r + "(" + p2a + ")"
+
     }
 </script>
 
