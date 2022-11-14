@@ -142,7 +142,19 @@ function myFunction() {
         localStorage.setItem('1', p3r);
         localStorage.setItem('2', p4r);
         localStorage.setItem('2', p5r);
-        document.getElementById("preview_stage1").innerHTML = "Puzzle 3 response: " + " " + p3r + ", Year Puzzle Response: " + p4r + ", Maze Puzzle Response: " + p5r;
+        var p1a = "incorrect";
+        var p2a = "incorrect";
+        var p3a = "incorrect";
+        if (p3r == "binary") {
+            p1a = "correct";
+        }
+        if (p4r == "1996") {
+            p2a = "correct";
+        }
+        if (p5r == "DLDRURDLD") {
+            p3a = "correct";
+        }
+        document.getElementById("preview_stage1").innerHTML = "Puzzle 3 response: " + " " + p3r + "(" + p1a + ")" + ", Year Puzzle Response: " + p4r + "(" + p2a + ")"  + ", Maze Puzzle Response: " + p5r + "(" + p3a + ")";
     }
 </script>
 
