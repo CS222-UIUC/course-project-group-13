@@ -63,17 +63,8 @@ function myFunction() {
     <div id="something_container"></div>
     <input type="hidden" name="form_type" value="puzzle_one">
     <p>Whether I'm 1-Dimensional, 2-Dimensional, or 3-Dimensional, I'm still the same. You can change my size, but you can't change my type or my name. What am I?</p>
-    <p id="puz1display"  style="color:white;font-size:12px;">What you submitted: </p>
     <input type="text" id="clue_one_password" name="clue_one_password" minlength="6" maxlength="6" placeholder="v - - - - -">
     <input type="submit" onclick="puz1response()"/>
-    <script type="text/javascript">
-        var puz1answer;
-        function puz1response() {
-            puz1answer= document.getElementById('clue_one_password').value;
-            localStorage.setItem('store1', puz1answer);
-            document.getElementById("puz1display").innerHTML = "What you submitted: " + puz1answer;
-        }
-    </script>
 </form> 
 
 {% if messages %}
@@ -94,18 +85,28 @@ function myFunction() {
   <input type="hidden" name="form_type" value="puzzle_two">
   <p>Decode the following message: </p>
   <p>Wklv surmhfw ghvhuyhv dq D!: </p>
-  <p id="puz2display"  style="color:white;font-size:12px;">What you submitted: </p>
   <input type="text" id="clue_two_password" name="clue_two_password" textarea id="Clue 2 Puzzle Response" name="Clue 2 Puzzle Response" rows="2" cols="40"></textarea>
   <input type="submit" onclick="function2()"/>
-  <script type="text/javascript">
-      var puz2response;
-      function function2() {
-      puz2response = document.getElementById('Clue 2 Puzzle Response').value;
-          localStorage.setItem('store2', puz2response);
-          document.getElementById("puz2display").innerHTML = "What you submitted: " + puz2response;
-      }
-  </script>
 </form>
+
+<br>
+
+<p style="color:chartreuse;font: size 12px;">Preview All Puzzle Responses: Click Submit Query Below</p>
+<p id="preview_stage1"  style="color:white;font-size:12px;">What you submitted: </p>
+<input type="submit" onclick="f()"/>
+<script type="text/javascript">
+    var p1r;
+    var p2r;
+    function f() {
+        p1r = document.getElementById('clue_one_password').value;
+        p2r = document.getElementById('clue_two_password').value;
+        localStorage.setItem('1', p1r);
+        localStorage.setItem('2', p2r);
+        document.getElementById("preview_stage1").innerHTML = "Puzzle 1 response: " + " " + p1r + ", Puzzle 2 Response: " + p2r;
+    }
+</script>
+
+
 
     
 <br>
