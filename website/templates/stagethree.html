@@ -35,10 +35,8 @@
 
     <p id="stats"  style="color:greenyellow;font-size:18px;"></p>
     <script>
-        var points = 0;
-        var attempts = 3;
-        var level = 3;
-        document.getElementById("stats").innerHTML = "Level: " + level + ", Points: " + points + ", Attempts Left: " + attempts;
+
+        document.getElementById("stats").innerHTML = "Level: " + 3 + ", Points: " + 0 + ", Attempts Left: " + 3;
     </script>
     
     
@@ -91,7 +89,7 @@
             
     <form action="" method="POST" id="puzzle_seven">{% csrf_token %}
         <input type="hidden" name="form_type" value="puzzle_seven">
-        <p>Enter a 5-digit capital letter code:  </p>
+        <p>Enter a 5-character capital letter code:  </p>
         <input type="text" id="check_match" name="check_match" minlength="5" maxlength="5" placeholder="" size="5">
         <input type="submit"/>
     
@@ -123,11 +121,39 @@
         <script type="text/javascript">
             var p6r;
             var p7r;
+            var points = 0;
+            var attempts = 3;
+            var level = 3;
+            var p7a = "(incorrect)";
             function f() {
                 p6r = document.getElementById('guess_puzzle').value;
                 p7r = document.getElementById('check_match').value;
                 localStorage.setItem('1', p6r);
+                if (p7r[0] != "D") {
+                    p7a = "(The 1st letter is wrong)";
+                } else {
+                    if (p7r[1] != "A") {
+                        p7a = "(The 2nd letter is wrong)";
+                    } else {
+                        if (p7r[2] != "E") {
+                            p7a = "(The 3rd letter is wrong)";
+                        } else {
+                            if (p7r[3] != "B") {
+                                p7a = "(The 4th letter is wrong)";
+                            } else {
+                                if (p7r[4] != "C") {
+                                    p7a = "(The 5th letter is wrong)";
+                                }
+                            }
+                        }
+                    }
+                }
+                if (p7r == "DAEBC") {
+                    p7a = "(correct)"
+                    points = points + attempts;
+                    document.getElementById("stats").innerHTML = "Level: " + level + ", Points: " + points + ", Attempts Left: " + attempts;
+                }
                 localStorage.setItem('2', p7r);
-                document.getElementById("preview_stage3").innerHTML = "Puzzle 6 response: " + " " + p6r + ", Puzzle 7 Response: " + p7r;
+                document.getElementById("preview_stage3").innerHTML = "Puzzle 6 response: " + " " + p6r + ", Puzzle 7 Response: " + p7r + p7a;
             }
         </script>
