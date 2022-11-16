@@ -34,10 +34,8 @@
 
 <p id="stats"  style="color:greenyellow;font-size:18px;"></p>
 <script>
-    var points = 0;
-    var attempts = 3;
-    var level = 1;
-    document.getElementById("stats").innerHTML = "Level: " + level + ", Points: " + points + ", Attempts Left: " + attempts;
+
+    document.getElementById("stats").innerHTML = "Level: " + 1 + ", Points: " + 0 + ", Attempts Left: " + 3;
 </script>
 
 <!-- Start Timer -->
@@ -97,6 +95,9 @@ function myFunction() {
 <script type="text/javascript">
     var p1r;
     var p2r;
+    var points = 0;
+    var attempts = 3;
+    var level = 1;
     function f() {
         p1r = document.getElementById('clue_one_password').value;
         p2r = document.getElementById('clue_two_password').value;
@@ -104,14 +105,21 @@ function myFunction() {
         localStorage.setItem('2', p2r);
         var p1a = "incorrect";
         var p2a = "incorrect";
+        if (p1r != "vector" && p2r != "This project deserves an A!") {
+            attempts = attempts - 1;
+            document.getElementById("stats").innerHTML = "Level: " + level + ", Points: " + points + ", Attempts Left: " + attempts;
+        }
         if (p1r == "vector") {
             p1a = "correct";
+            points=points+attempts;
+            document.getElementById("stats").innerHTML = "Level: " + level + ", Points: " + points + ", Attempts Left: " + attempts;
         }
         if (p2r == "This project deserves an A!") {
             p2a = "correct";
+            points=points+attempts;
+            document.getElementById("stats").innerHTML = "Level: " + level + ", Points: " + points + ", Attempts Left: " + attempts;
         }
         document.getElementById("preview_stage1").innerHTML = "Puzzle 1 response: " + " " + p1r + "(" + p1a + ")" + ", Puzzle 2 Response: " + p2r + "(" + p2a + ")"
-
     }
 </script>
 
