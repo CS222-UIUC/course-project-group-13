@@ -36,10 +36,7 @@ points/attempts display, inventory, theming/style (CSS) -->
 
 <p id="stats"  style="color:greenyellow;font-size:18px;"></p>
 <script>
-    var points = 0;
-    var attempts = 3;
-    var level = 2;
-    document.getElementById("stats").innerHTML = "Level: " + level + ", Points: " + points + ", Attempts Left: " + attempts;
+    document.getElementById("stats").innerHTML = "Level: " + 2 + ", Points: " + 0 + ", Attempts Left: " + 3;
 </script>
 
 
@@ -135,6 +132,9 @@ function myFunction() {
 <script type="text/javascript">
     var p1r;
     var p2r;
+    var points = 0;
+    var attempts = 3;
+    var level = 2;
     function f() {
         p3r = document.getElementById('clue_three_password').value;
         p4r = document.getElementById('year_puzzle').value;
@@ -145,14 +145,24 @@ function myFunction() {
         var p1a = "incorrect";
         var p2a = "incorrect";
         var p3a = "incorrect";
+        if (p3r != "binary" && p4r != "1996" && p5r != "DLDRURDLD") {
+            attempts = attempts - 1;
+            document.getElementById("stats").innerHTML = "Level: " + level + ", Points: " + points + ", Attempts Left: " + attempts;
+        }
         if (p3r == "binary") {
             p1a = "correct";
+            points = points + attempts;
+            document.getElementById("stats").innerHTML = "Level: " + level + ", Points: " + points + ", Attempts Left: " + attempts;
         }
         if (p4r == "1996") {
             p2a = "correct";
+            points = points + attempts;
+            document.getElementById("stats").innerHTML = "Level: " + level + ", Points: " + points + ", Attempts Left: " + attempts;
         }
         if (p5r == "DLDRURDLD") {
             p3a = "correct";
+            points = points + attempts;
+            document.getElementById("stats").innerHTML = "Level: " + level + ", Points: " + points + ", Attempts Left: " + attempts;
         }
         document.getElementById("preview_stage1").innerHTML = "Puzzle 3 response: " + " " + p3r + "(" + p1a + ")" + ", Year Puzzle Response: " + p4r + "(" + p2a + ")"  + ", Maze Puzzle Response: " + p5r + "(" + p3a + ")";
     }
