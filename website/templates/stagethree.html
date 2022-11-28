@@ -1,151 +1,142 @@
 <!--
 •	Contains these puzzles: 4-digit code (representing a year, as obtained through the 4 numbers from the previous 
-stage) and 4-letter code (name of a programming language developed during that year), matching puzzle (for 
-users to match different common algorithm names with their descriptions in riddle format)
+    stage) and 4-letter code (name of a programming language developed during that year), matching puzzle (for 
+    users to match different common algorithm names with their descriptions in riddle format)
 •	Contains hidden objects: timeline (which helps players find the correct event during a certain year)
 •	Uses the following features: text box, on-screen touch/click-based lock (for numeric codes), click-and-drag 
-matching tool (to solve algorithm-related puzzle) -->
+    matching tool (to solve algorithm-related puzzle) -->
 
-<style>
-    body {
-        background: black;
-        color:white;
-        font-family: lucida console;
+    <style>
+        body {
+            background: black;
+            color:white;
+            font-family: lucida console;
+        }
+        h1 {
+            color: red;
+            font-family: lucida console;
+        }
+        p {
+            color: powderblue;
+            border: 10px solid;
+            padding: 30px;
+        }
+        a {
+            color: white;
+        }
+    </style>
+    
+    <!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="icon" href="/favicon.ico"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#000000"/><meta name="description" content="Web site created using create-react-app"/><link rel="apple-touch-icon" href="/logo192.png"/><link rel="manifest" href="/manifest.json"/><title>React App</title><script defer="defer" src="/static/js/main.0215976b.js"></script><link href="/static/css/main.073c9b0a.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div></body></html>
+
+    <h2>Stage 3: Find clues and enter your answers to them in text boxes</h2>
+
+
+    <!-- Display Points and Level -->
+
+    <p id="stats"  style="color:greenyellow;font-size:18px;"></p>
+    <script>
+
+        document.getElementById("stats").innerHTML = "Level: " + 3 + ", Points: " + 0 + ", Attempts Left: " + 3;
+    </script>
+    
+    
+    <!-- Start Timer -->
+    
+    
+    <p>This stage is available for 3 minutes (180 seconds).</p>
+    
+    <button onclick="setTimeout(myFunction, 180000);">Start Game</button>
+    
+    <script>
+    function myFunction() {
+      alert('Your time is up. Game is over.');
     }
-    h1 {
-        color: red;
-        font-family: lucida console;
-    }
-    p {
-        color: powderblue;
-        border: 10px solid;
-        padding: 30px;
-    }
-    a {
-        color: white;
-    }
-</style>
-
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="icon" href="/favicon.ico"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#000000"/><meta name="description" content="Web site created using create-react-app"/><link rel="apple-touch-icon" href="/logo192.png"/><link rel="manifest" href="/manifest.json"/><title>React App</title><script defer="defer" src="/static/js/main.0215976b.js"></script><link href="/static/css/main.073c9b0a.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div></body></html>
-
-<h2>Stage 3: Find clues and enter your answers to them in text boxes</h2>
-
-
-<!-- Display Points and Level -->
-
-<p id="stats"  style="color:greenyellow;font-size:18px;"></p>
-<script>
-
-    document.getElementById("stats").innerHTML = "Level: " + 3 + ", Points: " + 0 + ", Attempts Left: " + 3;
-</script>
-
-
-<!-- Start Timer -->
-
-
-<p>This stage is available for 3 minutes (180 seconds).</p>
-
-<button onclick="setTimeout(myFunction, 180000);">Start Game</button>
-
-<script>
-function myFunction() {
-  alert('Your time is up. Game is over.');
-}
-</script>
-
-<br>
-<br>
-
-
-<h4>
-<p>1. Rotation__________________________________A. DFS</p>
-<p>2. Stack_____________________________________B. * or &</p>
-<p>3. Segmentation-fault-causer_________________C. Valgrind</p>
-<p>4. Allows for change_________________________D. AVL</p>
-<p>5. Memory____________________________________E. NULL</p></h4>
-
-
-<br>
-
-<form action="" method="POST" id="puzzle_six">{% csrf_token %}
-    <input type="hidden" name="form_type" value="puzzle_six">
-    <p>Numerical Guessing Puzzle: Type difficulty "easy", "medium", or "hard"  </p>
-    <input type="text">
-        <p>Numerical Guessing Puzzle: Submit your guess here!  </p>
-        <input type="text" id="guess_puzzle" name="guess_puzzle" minlength="2" maxlength="2" placeholder="" size="2">
-        <input type="submit"/>
-
-        <body>
-            <div class="container">
-                <form action="file:///C:\Users\rohiths2 illinois\hello\Guess Puzzle Backup.py">
-                    <button class="btn btn-danger btn-lg">Open in Terminal</button>
-                </form>
-            </div>
-        </body>
-
-<br>
-
-
-
-<form action="" method="POST" id="puzzle_seven">{% csrf_token %}
-    <input type="hidden" name="form_type" value="puzzle_seven">
-    <p>Enter a 5-character capital letter code:  </p>
-    <input type="text" id="check_match" name="check_match" minlength="5" maxlength="5" placeholder="" size="5">
-    <input type="submit"/>
-
-
-
-
-
-
-
-        <!-- Load React. -->
-        <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
-        <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-
-        <!-- Load our React component. -->
-        <script src="website\templates\something.js"></script>
-    </form>
-
-
-
-
-
-
+    </script>
+    
     <br>
+    <br>
+    
+    
+    <h4>
+    <p>1. Rotation__________________________________A. DFS</p>
+    <p>2. Stack_____________________________________B. * or &</p>
+    <p>3. Segmentation-fault-causer_________________C. Valgrind</p>
+    <p>4. Allows for change_________________________D. AVL</p>
+    <p>5. Memory____________________________________E. NULL</p></h4>
+    
+    
+    <br>
+    
+    <form action="" method="POST" id="puzzle_six">{% csrf_token %}
+        <input type="hidden" name="form_type" value="puzzle_six">
+        <p>Numerical Guessing Puzzle: Type difficulty "easy", "medium", or "hard"  </p>
+        <input type="text">
+            <p>Numerical Guessing Puzzle: Submit your guess here!  </p>
+            <input type="text" id="guess_puzzle" name="guess_puzzle" minlength="2" maxlength="2" placeholder="" size="2">
+            <input type="submit"/>
+            
+            <body>
+                <div class="container">
+                    <form action="file:///C:\Users\rohiths2 illinois\hello\Guess Puzzle Backup.py">
+                        <button class="btn btn-danger btn-lg">Open in Terminal</button>
+                    </form>
+                </div>
+            </body>
+            
+    <br>
+    
+            
+            
+    <form action="" method="POST" id="puzzle_seven">{% csrf_token %}
+        <input type="hidden" name="form_type" value="puzzle_seven">
+        <p>Enter a 5-character capital letter code:  </p>
+        <input type="text" id="check_match" name="check_match" minlength="5" maxlength="5" placeholder="" size="5">
+        <input type="submit"/>
+    
+            
+            
+            
+            
+        
+        
+            <!-- Load React. -->
+            <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+            <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+            <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+        
+            <!-- Load our React component. -->
+            <script src="website\templates\something.js"></script>
+        </form>
 
-    <p style="color:chartreuse;font: size 12px;">Preview All Puzzle Responses: Click Submit Query Below</p>
-    <p id="preview_stage3"  style="color:white;font-size:12px;">What you submitted: </p>
-    <input type="submit" onclick="f()"/>
-    <script type="text/javascript">
-        var p6r;
-        var p7r;
-        var points = 0;
-        var attempts = 3;
-        var level = 3;
-        var p7a = "(incorrect)";
-        var p6done = 0;
-        var p7done = 0;
-        function f() {
-            if (attempts == 0) {
-                alert('You are out of attempts. Game is over.');
-                sspoints = 0;
-            }
-            p6r = document.getElementById('guess_puzzle').value;
-            p7r = document.getElementById('check_match').value;
-            localStorage.setItem('1', p6r);
-            if (p7r[0] != "D") {
-                p7a = "(The 1st letter is wrong)";
-                attempts=attempts-1;
+
+
+
+
+
+        <br>
+
+        <p style="color:chartreuse;font: size 12px;">Preview All Puzzle Responses: Click Submit Query Below</p>
+        <p id="preview_stage3"  style="color:white;font-size:12px;">What you submitted: </p>
+        <input type="submit" onclick="f()"/>
+        <script type="text/javascript">
+            var p6r;
+            var p7r;
+            var points = 0;
+            var attempts = 3;
+            var level = 3;
+            var p7a = "(incorrect)";
+            var p6done = 0;
+            var p7done = 0;
+            function f() {
                 if (attempts == 0) {
                     alert('You are out of attempts. Game is over.');
-                    points = 0;
+                    sspoints = 0;
                 }
-                document.getElementById("stats").innerHTML = "Level: " + level + ", Points: " + points + ", Attempts Left: " + attempts;
-            } else {
-                if (p7r[1] != "A") {
-                    p7a = "(The 2nd letter is wrong)";
+                p6r = document.getElementById('guess_puzzle').value;
+                p7r = document.getElementById('check_match').value;
+                localStorage.setItem('1', p6r);
+                if (p7r[0] != "D") {
+                    p7a = "(The 1st letter is wrong)";
                     attempts=attempts-1;
                     if (attempts == 0) {
                         alert('You are out of attempts. Game is over.');
@@ -153,8 +144,8 @@ function myFunction() {
                     }
                     document.getElementById("stats").innerHTML = "Level: " + level + ", Points: " + points + ", Attempts Left: " + attempts;
                 } else {
-                    if (p7r[2] != "E") {
-                        p7a = "(The 3rd letter is wrong)";
+                    if (p7r[1] != "A") {
+                        p7a = "(The 2nd letter is wrong)";
                         attempts=attempts-1;
                         if (attempts == 0) {
                             alert('You are out of attempts. Game is over.');
@@ -162,8 +153,8 @@ function myFunction() {
                         }
                         document.getElementById("stats").innerHTML = "Level: " + level + ", Points: " + points + ", Attempts Left: " + attempts;
                     } else {
-                        if (p7r[3] != "B") {
-                            p7a = "(The 4th letter is wrong)";
+                        if (p7r[2] != "E") {
+                            p7a = "(The 3rd letter is wrong)";
                             attempts=attempts-1;
                             if (attempts == 0) {
                                 alert('You are out of attempts. Game is over.');
@@ -171,28 +162,38 @@ function myFunction() {
                             }
                             document.getElementById("stats").innerHTML = "Level: " + level + ", Points: " + points + ", Attempts Left: " + attempts;
                         } else {
-                            if (p7r[4] != "C") {
-                                p7a = "(The 5th letter is wrong)";
+                            if (p7r[3] != "B") {
+                                p7a = "(The 4th letter is wrong)";
                                 attempts=attempts-1;
                                 if (attempts == 0) {
                                     alert('You are out of attempts. Game is over.');
                                     points = 0;
                                 }
                                 document.getElementById("stats").innerHTML = "Level: " + level + ", Points: " + points + ", Attempts Left: " + attempts;
+                            } else {
+                                if (p7r[4] != "C") {
+                                    p7a = "(The 5th letter is wrong)";
+                                    attempts=attempts-1;
+                                    if (attempts == 0) {
+                                        alert('You are out of attempts. Game is over.');
+                                        points = 0;
+                                    }
+                                    document.getElementById("stats").innerHTML = "Level: " + level + ", Points: " + points + ", Attempts Left: " + attempts;
+                                }
                             }
                         }
                     }
                 }
-            }
-            if (p7r == "DAEBC") {
-                p7a = "(correct)"
-                if (p7done == 0) {
-                    points = points + attempts;
-                    document.getElementById("stats").innerHTML = "Level: " + level + ", Points: " + points + ", Attempts Left: " + attempts;
-                    p7done = 1;
+                if (p7r == "DAEBC") {
+                    p7a = "(correct)"
+                    if (p7done == 0) {
+                        points = points + attempts;
+                        document.getElementById("stats").innerHTML = "Level: " + level + ", Points: " + points + ", Attempts Left: " + attempts;
+                        alert('The 5-letter code is correct! You earned ' + attempts + ' points for a total of ' + points);
+                        p7done = 1;
+                    }
                 }
+                localStorage.setItem('2', p7r);
+                document.getElementById("preview_stage3").innerHTML = "Puzzle 6 response: " + " " + p6r + ", Puzzle 7 Response: " + p7r + p7a;
             }
-            localStorage.setItem('2', p7r);
-            document.getElementById("preview_stage3").innerHTML = "Puzzle 6 response: " + " " + p6r + ", Puzzle 7 Response: " + p7r + p7a;
-        }
-    </script>
+        </script>
