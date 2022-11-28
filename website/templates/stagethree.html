@@ -66,21 +66,12 @@ alert('Your time is up. Game is over.');
 
 
 <br>
-
+<p>Numerical Guessing Puzzle: First, click the button below to randomize an integer between 0 and 10. <br>Then, type your guess of that integer in the text box and submit your answer. <br> You only have one attempt! </p>
+<input type="submit" onclick="f2()" value="Randomize Hidden Number"
+<br>
 <form action="" method="POST" id="puzzle_six">{% csrf_token %}
 <input type="hidden" name="form_type" value="puzzle_six">
-<p>Numerical Guessing Puzzle: Type difficulty "easy", "medium", or "hard"  </p>
-<input type="text">
-    <p>Numerical Guessing Puzzle: Submit your guess here!  </p>
     <input type="text" id="guess_puzzle" name="guess_puzzle" minlength="2" maxlength="2" placeholder="" size="2">
-
-    <body>
-        <div class="container">
-            <form action="file:///C:\Users\rohiths2 illinois\hello\Guess Puzzle Backup.py">
-                <button class="btn btn-danger btn-lg">Open in Terminal</button>
-            </form>
-        </div>
-    </body>
 </form>
 <input type="submit" onclick="f()" value = "Submit Answers"/>
 <br>
@@ -117,6 +108,8 @@ alert('Your time is up. Game is over.');
 <p id="preview_stage3"  style="color:chartreuse;font: size 12px;">What you submitted: </p>
 <input type="submit" onclick="f()" value="Submit All Responses"/>
 <script type="text/javascript">
+    var random = 10000;
+    var p6a = "(incorrect)";
     var p6r;
     var p7r;
     var points = 0;
@@ -125,56 +118,88 @@ alert('Your time is up. Game is over.');
     var p7a = "(incorrect)";
     var p6done = 0;
     var p7done = 0;
+    function f2() {
+        random = Math.floor(Math.random() * 10);
+    }
     function f() {
         if (attempts == 0) {
             alert('You are out of attempts. Game is over.');
             sspoints = 0;
         }
         p6r = document.getElementById('guess_puzzle').value;
+        if ((p6r == random)) {
+            p6a = "(correct)";
+            if (p6done == 0) {
+                points = points + 3;
+            }
+            p6done = 1;
+        } else  if (Math.abs(p6r-random) == 1) {
+            p6a = "(off by one)";
+            if (p6done == 0) {
+                points = points + 2;
+            }
+            p6done = 1;
+        }  else if (Math.abs(p6r-random) == 2) {
+            p6a = "(off by two)";
+            if (p6done == 0) {
+                points = points + 1;
+            }
+            p6done = 1;
+        }
         p7r = document.getElementById('check_match').value;
         localStorage.setItem('1', p6r);
         if (p7r[0] != "D") {
             p7a = "(The 1st letter is wrong)";
-            attempts=attempts-1;
-            if (attempts == 0) {
-                alert('You are out of attempts. Game is over.');
-                points = 0;
-            }
-            document.getElementById("stats").innerHTML = "Level: " + level + ", Points: " + points + ", Attempts Left: " + attempts;
-        } else {
-            if (p7r[1] != "A") {
-                p7a = "(The 2nd letter is wrong)";
-                attempts=attempts-1;
-                if (attempts == 0) {
-                    alert('You are out of attempts. Game is over.');
-                    points = 0;
-                }
-                document.getElementById("stats").innerHTML = "Level: " + level + ", Points: " + points + ", Attempts Left: " + attempts;
-            } else {
-                if (p7r[2] != "E") {
-                    p7a = "(The 3rd letter is wrong)";
+            if (p6a = "(incorrect)") {
                     attempts=attempts-1;
                     if (attempts == 0) {
                         alert('You are out of attempts. Game is over.');
                         points = 0;
                     }
-                    document.getElementById("stats").innerHTML = "Level: " + level + ", Points: " + points + ", Attempts Left: " + attempts;
-                } else {
-                    if (p7r[3] != "B") {
-                        p7a = "(The 4th letter is wrong)";
+                }
+            document.getElementById("stats").innerHTML = "Level: " + level + ", Points: " + points + ", Attempts Left: " + attempts;
+        } else {
+            if (p7r[1] != "A") {
+                p7a = "(The 2nd letter is wrong)";
+                if (p6a = "(incorrect)") {
+                    attempts=attempts-1;
+                    if (attempts == 0) {
+                        alert('You are out of attempts. Game is over.');
+                        points = 0;
+                    }
+                }
+                document.getElementById("stats").innerHTML = "Level: " + level + ", Points: " + points + ", Attempts Left: " + attempts;
+            } else {
+                if (p7r[2] != "E") {
+                    p7a = "(The 3rd letter is wrong)";
+                    if (p6a = "(incorrect)") {
                         attempts=attempts-1;
                         if (attempts == 0) {
                             alert('You are out of attempts. Game is over.');
                             points = 0;
                         }
-                        document.getElementById("stats").innerHTML = "Level: " + level + ", Points: " + points + ", Attempts Left: " + attempts;
-                    } else {
-                        if (p7r[4] != "C") {
-                            p7a = "(The 5th letter is wrong)";
+                    }
+                    document.getElementById("stats").innerHTML = "Level: " + level + ", Points: " + points + ", Attempts Left: " + attempts;
+                } else {
+                    if (p7r[3] != "B") {
+                        p7a = "(The 4th letter is wrong)";
+                        if (p6a = "(incorrect)") {
                             attempts=attempts-1;
                             if (attempts == 0) {
                                 alert('You are out of attempts. Game is over.');
                                 points = 0;
+                            }
+                        }
+                        document.getElementById("stats").innerHTML = "Level: " + level + ", Points: " + points + ", Attempts Left: " + attempts;
+                    } else {
+                        if (p7r[4] != "C") {
+                            p7a = "(The 5th letter is wrong)";
+                            if (p6a = "(incorrect)") {
+                                attempts=attempts-1;
+                                if (attempts == 0) {
+                                    alert('You are out of attempts. Game is over.');
+                                    points = 0;
+                                }
                             }
                             document.getElementById("stats").innerHTML = "Level: " + level + ", Points: " + points + ", Attempts Left: " + attempts;
                         }
@@ -192,6 +217,6 @@ alert('Your time is up. Game is over.');
             }
         }
         localStorage.setItem('2', p7r);
-        document.getElementById("preview_stage3").innerHTML = "Puzzle 6 response: " + " " + p6r + ", Puzzle 7 Response: " + p7r + p7a;
+        document.getElementById("preview_stage3").innerHTML = "Puzzle 6 response: " + " " + random + "--" + p6r + p6a + ", Puzzle 7 Response: " + p7r + p7a;
     }
 </script>
