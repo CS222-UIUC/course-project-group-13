@@ -135,6 +135,9 @@ function myFunction() {
     var points = 0;
     var attempts = 3;
     var level = 2;
+    var p3done = 0;
+    var p4done = 0;
+    var p5done = 0;
     function f() {
         p3r = document.getElementById('clue_three_password').value;
         p4r = document.getElementById('year_puzzle').value;
@@ -151,18 +154,27 @@ function myFunction() {
         }
         if (p3r == "binary") {
             p1a = "correct";
-            points = points + attempts;
-            document.getElementById("stats").innerHTML = "Level: " + level + ", Points: " + points + ", Attempts Left: " + attempts;
+            if (p3done == 0) {
+                points = points + attempts;
+                document.getElementById("stats").innerHTML = "Level: " + level + ", Points: " + points + ", Attempts Left: " + attempts;
+                p3done = 1;
+            }
         }
         if (p4r == "1996") {
             p2a = "correct";
-            points = points + attempts;
-            document.getElementById("stats").innerHTML = "Level: " + level + ", Points: " + points + ", Attempts Left: " + attempts;
+            if (p4done == 0) {
+                points = points + attempts;
+                document.getElementById("stats").innerHTML = "Level: " + level + ", Points: " + points + ", Attempts Left: " + attempts;
+                p4done = 1;
+            }
         }
         if (p5r == "DLDRURDLD") {
             p3a = "correct";
-            points = points + attempts;
-            document.getElementById("stats").innerHTML = "Level: " + level + ", Points: " + points + ", Attempts Left: " + attempts;
+            if (p5done == 0) {
+                points = points + attempts;
+                document.getElementById("stats").innerHTML = "Level: " + level + ", Points: " + points + ", Attempts Left: " + attempts;
+                p5done = 1;
+            }
         }
         document.getElementById("preview_stage1").innerHTML = "Puzzle 3 response: " + " " + p3r + "(" + p1a + ")" + ", Year Puzzle Response: " + p4r + "(" + p2a + ")"  + ", Maze Puzzle Response: " + p5r + "(" + p3a + ")";
     }
