@@ -139,6 +139,10 @@ function myFunction() {
     var p4done = 0;
     var p5done = 0;
     function f() {
+        if (attempts == 0) {
+                alert('You are out of attempts. Game is over.');
+                points = 0;
+        }
         p3r = document.getElementById('clue_three_password').value;
         p4r = document.getElementById('year_puzzle').value;
         p5r = document.getElementById('maze_puzzle').value;
@@ -150,6 +154,10 @@ function myFunction() {
         var p3a = "incorrect";
         if (p3r != "binary" && p4r != "1996" && p5r != "DLDRURDLD") {
             attempts = attempts - 1;
+            if (attempts == 0) {
+                alert('You are out of attempts. Game is over.');
+                points = 0;
+            }
             document.getElementById("stats").innerHTML = "Level: " + level + ", Points: " + points + ", Attempts Left: " + attempts;
         }
         if (p3r == "binary") {
