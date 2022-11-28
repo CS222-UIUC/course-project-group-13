@@ -112,6 +112,10 @@ function myFunction() {
     var p1done = 0;
     var p2done = 0;
     function f() {
+        if (attempts == 0) {
+                alert('You are out of attempts. Game is over.');
+                points = 0;
+        }
         p1r = document.getElementById('clue_one_password').value;
         p2r = document.getElementById('clue_two_password').value;
         localStorage.setItem('1', p1r);
@@ -121,6 +125,10 @@ function myFunction() {
         if (p1r != "vector" && p2r != "This project deserves an A!") {
             attempts = attempts - 1;
             document.getElementById("stats").innerHTML = "Level: " + level + ", Points: " + points + ", Attempts Left: " + attempts;
+            if (attempts == 0) {
+                alert('You are out of attempts. Game is over.');
+                points = 0;
+            }
         }
         if (p1r == "vector") {
             p1a = "correct";
