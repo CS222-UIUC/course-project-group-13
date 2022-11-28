@@ -75,6 +75,7 @@ function myFunction() {
     <input type="text" id="clue_one_password" name="clue_one_password" minlength="6" maxlength="6" placeholder="v - - - - -">
     <input type="submit" onclick="puz1response()"/>
 </form> 
+<input type="submit" onclick="f()" value="Submit Answers"/>
 
 {% if messages %}
 <ul class="messages">
@@ -97,12 +98,12 @@ function myFunction() {
   <input type="text" id="clue_two_password" name="clue_two_password" textarea id="Clue 2 Puzzle Response" name="Clue 2 Puzzle Response" rows="2" cols="40"></textarea>
   <input type="submit" onclick="function2()"/>
 </form>
+<input type="submit" onclick="f()" value="Submit Answers"/>
 
 <br>
 
-<p style="color:chartreuse;font: size 12px;">Preview All Puzzle Responses: Click Submit Query Below</p>
-<p id="preview_stage1"  style="color:white;font-size:12px;">What you submitted: </p>
-<input type="submit" onclick="f()"/>
+<p id="preview_stage1"  style="color:chartreuse;font: size 12px;">What you submitted: </p>
+<input type="submit" onclick="f()" value="Submit All Responses"/>
 <script type="text/javascript">
     var p1r;
     var p2r;
