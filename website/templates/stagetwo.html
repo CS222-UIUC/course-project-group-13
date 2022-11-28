@@ -49,7 +49,6 @@ points/attempts display, inventory, theming/style (CSS) -->
 <button onclick="setTimeout(myFunction, 240000);">Start Game</button>
 
 <br>
-<a href="stagethree.html">Go to next stage</a> <br>
 
 <script>
 function myFunction() {
@@ -185,6 +184,17 @@ function myFunction() {
                 alert('The third answer is correct! You earned ' + attempts + ' points for a total of ' + points);
             }
             p5done = 1;
+        }
+        if (points > 6) {
+                alert('Great job! You earned the minimum required 7 points. Scroll up and click the link to advance to the next stage!')
+                if (points > 6) {
+                    var a = document.createElement('a');
+                    var link = document.createTextNode("Advance to next stage");
+                    a.appendChild(link);
+                    a.title = "Advance to next stage";
+                    a.href = "stagethree.html";
+                    document.body.prepend(a);
+                }
         }
         document.getElementById("preview_stage1").innerHTML = "Puzzle 3 response: " + " " + p3r + "(" + p1a + ")" + ", Year Puzzle Response: " + p4r + "(" + p2a + ")"  + ", Maze Puzzle Response: " + p5r + "(" + p3a + ")";
     }
