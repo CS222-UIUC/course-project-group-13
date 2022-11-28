@@ -135,6 +135,7 @@ function myFunction() {
             if (p1done == 0) {
                 points=points+attempts;
                 document.getElementById("stats").innerHTML = "Level: " + level + ", Points: " + points + ", Attempts Left: " + attempts;
+                alert('The first answer is correct! You earned ' + attempts + ' points for a total of ' + points);
             }
             p1done = 1;
         }
@@ -143,6 +144,7 @@ function myFunction() {
             if (p2done == 0) {
                 points=points+attempts;
                 document.getElementById("stats").innerHTML = "Level: " + level + ", Points: " + points + ", Attempts Left: " + attempts;
+                alert('The second answer is correct! You earned ' + attempts + ' points for a total of ' + points);
             }
             p2done = 1;
         }
