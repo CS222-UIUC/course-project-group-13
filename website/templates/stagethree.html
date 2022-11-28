@@ -125,24 +125,36 @@
             var attempts = 3;
             var level = 3;
             var p7a = "(incorrect)";
+            var p6done = 0;
+            var p7done = 0;
             function f() {
                 p6r = document.getElementById('guess_puzzle').value;
                 p7r = document.getElementById('check_match').value;
                 localStorage.setItem('1', p6r);
                 if (p7r[0] != "D") {
                     p7a = "(The 1st letter is wrong)";
+                    attempts=attempts-1;
+                    document.getElementById("stats").innerHTML = "Level: " + level + ", Points: " + points + ", Attempts Left: " + attempts;
                 } else {
                     if (p7r[1] != "A") {
                         p7a = "(The 2nd letter is wrong)";
+                        attempts=attempts-1;
+                        document.getElementById("stats").innerHTML = "Level: " + level + ", Points: " + points + ", Attempts Left: " + attempts;
                     } else {
                         if (p7r[2] != "E") {
                             p7a = "(The 3rd letter is wrong)";
+                            attempts=attempts-1;
+                            document.getElementById("stats").innerHTML = "Level: " + level + ", Points: " + points + ", Attempts Left: " + attempts;
                         } else {
                             if (p7r[3] != "B") {
                                 p7a = "(The 4th letter is wrong)";
+                                attempts=attempts-1;
+                                document.getElementById("stats").innerHTML = "Level: " + level + ", Points: " + points + ", Attempts Left: " + attempts;
                             } else {
                                 if (p7r[4] != "C") {
                                     p7a = "(The 5th letter is wrong)";
+                                    attempts=attempts-1;
+                                    document.getElementById("stats").innerHTML = "Level: " + level + ", Points: " + points + ", Attempts Left: " + attempts;
                                 }
                             }
                         }
@@ -150,8 +162,11 @@
                 }
                 if (p7r == "DAEBC") {
                     p7a = "(correct)"
-                    points = points + attempts;
-                    document.getElementById("stats").innerHTML = "Level: " + level + ", Points: " + points + ", Attempts Left: " + attempts;
+                    if (p7done == 0) {
+                        points = points + attempts;
+                        document.getElementById("stats").innerHTML = "Level: " + level + ", Points: " + points + ", Attempts Left: " + attempts;
+                        p7done = 1;
+                    }
                 }
                 localStorage.setItem('2', p7r);
                 document.getElementById("preview_stage3").innerHTML = "Puzzle 6 response: " + " " + p6r + ", Puzzle 7 Response: " + p7r + p7a;
