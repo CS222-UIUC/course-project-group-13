@@ -149,6 +149,17 @@ function myFunction() {
             }
             p2done = 1;
         }
+        if (points > 3) {
+                alert('Great job! You earned the minimum required 4 points. Scroll up and click the link to advance to the next stage!')
+                if (points > 3) {
+                    var a = document.createElement('a');
+                    var link = document.createTextNode("Advance to next stage");
+                    a.appendChild(link);
+                    a.title = "Advance to next stage";
+                    a.href = "stagetwo.html";
+                    document.body.prepend(a);
+                }
+        }
         document.getElementById("preview_stage1").innerHTML = "Puzzle 1 response: " + " " + p1r + "(" + p1a + ")" + ", Puzzle 2 Response: " + p2r + "(" + p2a + ")"
     }
 </script>
@@ -177,4 +188,3 @@ function myFunction() {
 
     <!-- Load our React component. -->
     <script src="website\templates\something.js"></script>
-</form>
