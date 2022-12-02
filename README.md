@@ -11,7 +11,7 @@ We build a website which simulates an escape room with a computer science theme.
 
 ## Diagram of Project Development
 
-<insert image here>
+![alt text](https://github.com/CS222-UIUC/course-project-group-13/blob/main/TechnicalArchitectureDiagram.JPG)
 
 # Installation Instructions
 
@@ -29,12 +29,26 @@ To run the website, follow these steps:
 
 
 # Group Members and Roles
+## Members
+Rohith Sanjay (backend developer)
+
+Stephanie Patterson: (frontend developer)
+
+Sydney Liu: (backend developer)
+
+## Work Distribution
 Creating puzzles and functions in Python: Rohith
+
 Organizing puzzles from Python: Stephanie
+
 Creating log-in/account feature for website, and maintaining website security: Sydney
+
 React/Framework for Website: Sydney
+
 Writing Features in JavaScript (e.g. level changer and points counter): Rohith, Sydney
+
 Creating and Implementing HTML Webpages: Stephanie, Rohith
+
 CSS/Website Styling: Stephanie
 
 
