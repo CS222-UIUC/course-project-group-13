@@ -24,6 +24,7 @@
     the room, there will be multiple puzzles for you to solve. If you don't succeed, they'll trap you here and make
     you keep coding forever! Good luck!</p>
 
+
 {% for message in messages %}
 <h3>{{message}}</h3>
 {% endfor %}
@@ -31,4 +32,20 @@
 <form method="POST" action="stageone.html">{% csrf_token %}
     <input type="submit" value="Click here to enter Room 1!"/>
 </form>
+
+
+<p>GAME INSTRUCTIONS:
+    <br>
+    <br> Once in the Stage One webpage, read the directions near the top of the stage (just below the green box on the top), and click the "Start" button (located right below the stage's directions) to start the timer. 
+    <br>
+    <br> Then start searching for clues and entering answers in text box (click Submit Answers after entering an answer). 
+    <br>
+    <br> Be aware that many text box answers have limited submissions (the number of submissions available can be seen in the "Attempts" indicator in the green box near the top of the website). 
+    <br>
+    <br> This green box can also be used to keep track of your score throughout. If you get an answer correct, the number of points will increase based on the number of attempts left. If you answer incorrectly, your number of attempts will decrease by 1 (so the number of points you earn for future puzzles will be less).
+    <br>
+    <br> Once you earn the minimum number of required points (at least 4 points for stage one, at least 7 for stage 2, and at least 4 for stage 3), you can then move on to the next stage by finding the "Go to Next Stage" hyperlink and clicking it. 
+    <br>
+    <br> If your timer runs out, or you have zero attempts left, the game is over and you cannot solve any more puzzles. </p>
     
+
