@@ -7,7 +7,7 @@ We build a website which simulates an escape room with a computer science theme.
 # Technical Architecture
 
 ## Summary of Components
-
+Our website mainly uses 5 HTML files (3 for game stages, 1 before the game starts, and 1 after the game ends), along with 2 extra HTML files for logging in and creating an account. The interactive features for the 5 main HTML files are coded through JavaScript on the same HTML files (internal scripts), and the React scripts are also contained on the same HTML files with some additional React files in different folders. Before coding the website, we used Python to build the game's puzzles and implemented proper logic to ensure the correct number of points is added based on the user's input given. These Python files are separate (not in the same files as the frontend, unlike the JavaScript). Many of the user-input interaction (e.g. typing into a text box, and then checking the text box answer locally) occurs through JavaScript's Local Storage feature as a way to connect the frontend and backend. See the diagram below for details.
 
 ## Diagram of Project Development
 
