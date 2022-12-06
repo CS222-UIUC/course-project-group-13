@@ -24,12 +24,13 @@
     the room, there will be multiple puzzles for you to solve. If you don't succeed, they'll trap you here and make
     you keep coding forever! Good luck!</p>
 
+<script>
+{% for message in messages %}
+<h3>{{message}}</h3>
+{% endfor %}
+</script>
 
-<h10 style="color:black;">{% for message in messages %}</h10>
-<h10 style="color:black;">{{message}}</h10>
-<h10 style="color:black;">{% endfor %}</h10>
-
-<form method="POST" action="stageone.html"><h10 style="color:black;">{% csrf_token %}</h10>
+<form method="POST" action="stageone.html">{% csrf_token %}
     <input type="submit" value="Click here to enter Room 1!"/>
 </form>
 
