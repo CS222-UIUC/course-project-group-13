@@ -25,11 +25,11 @@
     you keep coding forever! Good luck!</p>
 
 
-{% for message in messages %}
-<h3>{{message}}</h3>
-{% endfor %}
+<h10 style="color:black;">{% for message in messages %}</h10>
+<h10 style="color:black;">{{message}}</h10>
+<h10 style="color:black;">{% endfor %}</h10>
 
-<form method="POST" action="stageone.html">{% csrf_token %}
+<form method="POST" action="stageone.html"><h10 style="color:black;">{% csrf_token %}</h10>
     <input type="submit" value="Click here to enter Room 1!"/>
 </form>
 
@@ -48,4 +48,3 @@
     <br>
     <br> If your timer runs out, or you have zero attempts left, the game is over and you cannot solve any more puzzles. </p>
     
-
