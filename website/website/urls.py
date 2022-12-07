@@ -24,8 +24,8 @@ urlpatterns = [
     path('login', views.login, name='login'),
     path('logout', views.logout, name='logout'),
     path('stageone', views.stageone, name='stageone'),
-    path('stagetwo', views.stageone, name='stagetwo'),
-    path('stagethree', views.stageone, name='stagethree'),
+    path('stagetwo', views.stagetwo, name='stagetwo'),
+    path('stagethree', views.stagethree, name='stagethree'),
     path('game-begin', views.game_begin, name='game-begin'),
     path('game-end', views.game_end, name='game-end')
 ]

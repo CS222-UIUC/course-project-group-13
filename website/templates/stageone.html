@@ -162,40 +162,45 @@
                 if (points > 3) {
                         alert('Great job! You earned the minimum required 4 points. Scroll up and click the link to advance to the next stage!')
                         if (points > 3) {
-                            let anchor = document.createElement('a');
-                            let link = document.createTextNode("Advance to next stage");
-                            anchor.appendChild(link);
-                            anchor.href = "http://127.0.0.1:8000/stagetwo";
-                            document.body.appendChild(anchor);
+                            const button = document.createElement('button')
+
+                            // Set the button text to 'Can you click me?'
+                            button.innerText = 'Advance to next stage'
+
+                            button.id = 'mainButton'
+
+                            // Attach the "click" event to your button
+                            button.addEventListener('click', () => {
+                                // When there is a "click"
+                                window.location = 'stagetwo'
+                            })
+
+                            document.body.prepend(button)
+                            
                         }
                 }
                 document.getElementById("preview_stage1").innerHTML = "Puzzle 1 response: " + " " + p1r + "(" + p1a + ")" + ", Puzzle 2 Response: " + p2r + "(" + p2a + ")"
             }
         </script>
-        
-        
-        
             
         <br>
         <br>
         <br>
+
+        <div class="container">
+            <form action="https://inventwithpython.com/chapter14.html">
+                <button class="btn btn-danger btn-lg">Possible Hint for Puzzle</button>
+            </form>
+        </div>
+        
+            <!-- Load React. -->
+            <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+            <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+            <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
         
         
     </body>
 </html>
 
 
-
-<body>
-    <div class="container">
-        <form action="https://inventwithpython.com/chapter14.html">
-            <button class="btn btn-danger btn-lg">Possible Hint for Puzzle</button>
-        </form>
-    </div>
-</body>
-
-    <!-- Load React. -->
-    <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
-    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
 
