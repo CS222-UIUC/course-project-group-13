@@ -54,54 +54,14 @@ def game_begin(request):
 
 #first stage
 def stageone(request):
-    one = False
-    two = False
-    if request.method == 'POST':
-        attempts = 3
-        if request.POST.get("form_type") == "puzzle_one":
-            clue_one_attempt = request.POST['clue_one_password']
-            if (clue_one_attempt == 'vector'):
-            #TODO: gives user a key
-                one = True
-                messages.info(request, 'Congrats you solved puzzle one')
-                if (one == True & two == True):
-                    messages.success(request, 'You have finished the stage, want to move on to the next one?')
-            else:
-                if (attempts > 0):
-                    return
-                else:
-                    attempts = attempts - 1
-        if request.POST.get("form_type") == 'puzzle_two':
-            clue_two_attempt = request.POST['clue_two_password']
-            if (clue_two_attempt == "This project deserves an A!"):
-                two = True
-                messages.info(request, 'Congrats you solved puzzle two')
-                if (one == True & two == True):
-                    messages.success(request, 'You have finished the stage, want to move on to the next one?')
     return render(request, 'stageone.html')
 
 #second stage
 def stagetwo(request):
-    if request.method == 'POST':
-        if request.POST.get('form_type') == 'puzzle_three':
-            clue_three_attempt = request.POST['clue_three_passowrd']
-            if (clue_three_attempt == "binary"):
-                messages.info(request, "Congrats you solved puzzle three")
-        if request.POST.get('form_type') == 'puzzle_four':
-            clue_four_attempt = request.POST['year_puzzle']
-            if (clue_four_attempt == '1998'):
-                messages.info(request, 'Congrats you solved puzzle four')
-        if request.POST.get('form_type') == 'puzzle_five':
-            messages.info(request, 'Congrats you solved puzzle five')
     return render(request, 'stagetwo.html')
 
 #third stage
 def stagethree(request):
-    if request.method == 'POST':
-        if request.POST.get('form_type') == 'puzzle_six':
-            clue_six_attempt = request.POST['guess_puzzle']
-        if request.POST.get('form_type') == 'puzzle_seven':
-            clue_seven_attempt = request.POST['clue_match']
     return render(request, 'stagethree.html')
 
 def game_end(request):
