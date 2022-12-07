@@ -4,11 +4,11 @@
 <h3>{{message}}</h3>
 {% endfor %}
 
-<form action="game-begin.html" method="POST">{% csrf_token %}
+<form action="http://127.0.0.1:8000/game-begin" method="POST">{% csrf_token %}
     <p>Username:</p>
     <input type="text" name="username"/>
     <p>Password:</p>
     <input type="password" name="password"/><br>
     <input type="submit"/>
 </form>
-<a href="register.html">Create an account</a> <br>
+<a href="http://127.0.0.1:8000/register">Create an account</a> <br>

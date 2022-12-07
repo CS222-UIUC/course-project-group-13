@@ -12,7 +12,7 @@ def homepage(request):
 def register(request):
     if request.method == 'POST':
         username = request.POST['username']
-        password = request.POST['password']
+        password = request.POST['password'] 
 
         if User.objects.filter(username=username).exists():
             messages.info(request, 'Username already in use')
@@ -40,12 +40,12 @@ def login(request):
     return render(request, 'login.html')
 
 def game_begin(request):
-    if request.method == 'POST':
+    if request.method == 'POST': 
         if not request.user.is_authenticated:
             messages.info(request, 'You are not logged in')
             return redirect('login')
         else:
-            return redirect('stageone')
+            return redirect('http://127.0.0.1:8000/stageone')
     return render(request, 'game-begin.html')
 
 #first stage

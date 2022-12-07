@@ -4,7 +4,7 @@
 <h5>{{message}}</h5>
 {% endfor %}
 
-<form method="POST" action="login.html">{% csrf_token %}
+<form method="POST" action="http://127.0.0.1:8000/login">{% csrf_token %}
     <p>Username:</p>
     <input type="text" name="username" />
     <p>Password:</p>
