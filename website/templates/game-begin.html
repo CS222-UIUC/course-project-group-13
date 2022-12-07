@@ -24,11 +24,6 @@
     the room, there will be multiple puzzles for you to solve. If you don't succeed, they'll trap you here and make
     you keep coding forever! Good luck!</p>
 
-<form method="POST" action="http://127.0.0.1:8000/stageone">{% csrf_token %}
-    <input type="submit" value="Click here to enter Room 1!"/>
-</form>
-
-
 <p>GAME INSTRUCTIONS:
     <br>
     <br> Once in the Stage One webpage, read the directions near the top of the stage (just below the green box on the top), and click the "Start" button (located right below the stage's directions) to start the timer. 
@@ -43,3 +38,6 @@
     <br>
     <br> If your timer runs out, or you have zero attempts left, the game is over and you cannot solve any more puzzles. </p>
     
+    <form method="POST" action="http://127.0.0.1:8000/stageone">{% csrf_token %}
+        <input type="submit" value="Click here to enter Room 1!"/>
+    </form>

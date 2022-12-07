@@ -4,7 +4,7 @@
 <h3>{{message}}</h3>
 {% endfor %}
 
-<form action="http://127.0.0.1:8000/game-begin" method="POST">{% csrf_token %}
+<form action="login" method="POST">{% csrf_token %}
     <p>Username:</p>
     <input type="text" name="username"/>
     <p>Password:</p>

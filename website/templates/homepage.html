@@ -1,13 +1,28 @@
-{% load static %}
+<style>
+    h1 {
+        font-family: lucida console;
+        text-align: center;
+    }
+    h2 {
+        font-family: lucida console;
+        text-align: center;
+    }
+    a {
+        font-family: lucida console;
+    }
+</style>
 
-<html>
-    <link rel="stylesheet" href="{% static 'homepage.css' %}">
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="icon" href="/favicon.ico"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#000000"/><meta name="description" content="Web site created using create-react-app"/><link rel="apple-touch-icon" href="/logo192.png"/><link rel="manifest" href="/manifest.json"/><title>React App</title><script defer="defer" src="/static/js/main.0215976b.js"></script><link href="/static/css/main.073c9b0a.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div></body></html>
+
     <head>
         <title>CS 222 Escape Room :)</title>
+        {% if user.is_authenticated %}
+            <h1>Welcome {{ user.username }} to our CS 222 Escape Room :)</h1>
+        {% endif %}
         <h1>Instructions:</h1>
         <h2>Type on screen to enter codes and click buttons to solve puzzles, and follow links for next stages, etc. </h2>
-        <a href="login">Login</a> <br>
-        <a href="register">Register if you don't already have an account</a> <br>
-        <a href="game-begin">Start game</a>
+        <br>
+        <a href="login" style="margin:auto; text-align:center; display:block;" class="button large hpbottom">Login</a> <br>
+        <a href="register" style="margin:auto; text-align:center; display:block;" class="button large hpbottom">Register if you don't already have an account</a> <br>
+        <a href="game-begin" style="margin:auto; text-align:center; display:block;" class="button large hpbottom">Start game</a>
     </head>
-</html>
