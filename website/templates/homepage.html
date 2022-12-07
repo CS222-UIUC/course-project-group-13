@@ -22,7 +22,11 @@
         <h1>Instructions:</h1>
         <h2>Type on screen to enter codes and click buttons to solve puzzles, and follow links for next stages, etc. </h2>
         <br>
-        <a href="login" style="margin:auto; text-align:center; display:block;" class="button large hpbottom">Login</a> <br>
+        {% if user.is_authenticated %}
+            <a href="logout" style="margin:auto; text-align:center; display:block;" class="button large hpbottom">Logout</a> <br>
+        {% else %}
+            <a href="login" style="margin:auto; text-align:center; display:block;" class="button large hpbottom">Login</a> <br>
+        {% endif %}
         <a href="register" style="margin:auto; text-align:center; display:block;" class="button large hpbottom">Register if you don't already have an account</a> <br>
         <a href="game-begin" style="margin:auto; text-align:center; display:block;" class="button large hpbottom">Start game</a>
     </head>

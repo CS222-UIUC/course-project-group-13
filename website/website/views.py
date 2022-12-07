@@ -39,6 +39,10 @@ def login(request):
             return redirect('login')
     return render(request, 'login.html')
 
+def logout(request):
+    auth.logout(request)
+    return redirect('/')
+
 def game_begin(request):
     if request.method == 'POST': 
         if not request.user.is_authenticated:
