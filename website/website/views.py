@@ -12,7 +12,7 @@ def homepage(request):
 def register(request):
     if request.method == 'POST':
         username = request.POST['username']
-        password = request.POST['password'] 
+        password = request.POST['password']  
 
         if User.objects.filter(username=username).exists():
             messages.info(request, 'Username already in use')
@@ -61,7 +61,7 @@ def stagetwo(request):
     return render(request, 'stagetwo.html')
 
 #third stage
-def stagethree(request):
+def stagethree(request): 
     return render(request, 'stagethree.html')
 
 def game_end(request):
