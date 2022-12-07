@@ -1,0 +1,22 @@
+<style>
+    h1 {
+        font-family: lucida console;
+    }
+    p {
+        font-family: lucida console;
+    }
+</style>
+
+<h1>Create Account Below</h1>
+
+{% for message in messages %}
+<h5>{{message}}</h5>
+{% endfor %}
+
+<form method="POST" action="register">{% csrf_token %}
+    <p>Username:</p>
+    <input type="text" name="username" />
+    <p>Password:</p>
+    <input type="text" name="password" /> <br>
+    <input type="submit" />
+</form>
